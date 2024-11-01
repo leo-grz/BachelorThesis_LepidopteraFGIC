@@ -7,67 +7,76 @@
 # Imports
 import sys 
 import os 
-import random
-import matplotlib.pyplot as plt
+import pandas as pd
 from torch.utils.data import DataLoader
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 from moth_dataset import MothDataset
-from utils import show_sample
 
 # Config
-random.seed(42)
 
 PATH_TO_PROCESSED = 'C:/Users/Leo/Desktop/BA_MothClassification/data/processed/'
 PATH_TO_LABELS = PATH_TO_PROCESSED + 'testing_dataset_top20x50.csv'
 PATH_TO_IMAGES = PATH_TO_PROCESSED + 'testing_dataset_top20x50_images'
-#os.chmod(folder_path, 0o777)
-PATH_TO_WHITELIST = PATH_TO_PROCESSED + 'qa_whitelist.txt'
-PATH_TO_BLACKLIST = PATH_TO_PROCESSED + 'qa_blacklist.txt'
-PATH_TO_MANUALCHECKLIST = PATH_TO_PROCESSED + 'qa_manualcheck.txt'
 
-# Verify Config
-# print('\n###\tVerifying config:\n')
-# for list_file in [PATH_TO_BLACKLIST, PATH_TO_WHITELIST, PATH_TO_MANUALCHECKLIST]:
-#     if os.path.exists(list_file): 
-#         print(f'File found: {list_file}') 
-#     else: 
-#         print(f'File not found: {list_file}\t Exiting...')
-#         sys.exit(1)
 
+# prepare rows not containing BLACK / CHECK to be inspected by brightness check and objective size estimation
+csv_file = pd.read_csv(PATH_TO_LABELS)
+csv_file['status'] = csv_file['status'].astype('str')
+csv_file_filtered = csv_file[~csv_file['status'].isin(['CHECK', 'BLACK'])]
+csv_file_for_loader = csv_file_filtered[['gbifID', 'scientificName']]
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),  # Resize to match ResNet input size
     transforms.ToTensor(),          # Convert to tensor
 ])
-full_dataset = MothDataset(csv_file=PATH_TO_LABELS, root_dir=PATH_TO_IMAGES, transform=transform)
 
+full_dataset = MothDataset(csv_file=csv_file_for_loader, root_dir=PATH_TO_IMAGES, transform=transform)
 
-
-print('\n###\Reading in Dataset:\n')
 # only process files who's filenames are not already in whitelist, manualcheck or blacklist
-
-# Function to display an image
-def show_image(image, label):
-    image = image.numpy().transpose((1, 2, 0))  # Convert tensor to NumPy array and transpose for display
-    plt.imshow(image)
-    plt.title(label)
-    plt.axis('off')
-    plt.show()
 
 dataloader = DataLoader(full_dataset, batch_size=100, shuffle=False)
 
-for images, labels, gbifids, img_names in dataloader:
-    show_sample(images[0], labels[0], full_dataset.decode_label(labels[0]), gbifids[0], img_names[0])
-
+blacklist = []
+checklist = []
 
 # Brightness check
 
-# Sharpness check
+def calculate_darkness(tensor):
+    grayscale_tensor = tensor.mean(dim=0) # convert to grayscale
+    average_intensity = grayscale_tensor.mean().item() # calculate average pixel intensity
+
+    darkness_abs_threshold = 0.05
+    darkness_threshold = 0.15
+    is_dark = average_intensity < darkness_threshold
+    is_black = average_intensity < darkness_abs_threshold
+
+    return average_intensity, is_dark, is_black
+
+
+i = 0
+for images, labels, gbifids, img_names in dataloader:
+    i +=1
+    print(f'Bach [{i}/{len(dataloader)}]')
+    
+    for image, label, gbifid, img_name in zip(images, labels, gbifids, img_names):
+
+        average_intensity, is_dark, is_black = calculate_darkness(image)
+        if is_black: # if image is without a doubt too dark, automatically add it to blacklist
+            blacklist.append(int(gbifid))
+            print(f'Average Intensity: {average_intensity} | Adding {img_name} to blacklist.')
+
+        elif is_dark: # add image to manual check list
+            checklist.append(int(gbifid))
+            print(f'Average Intensity: {average_intensity} | Adding {img_name} to checklist.')
 
 # Size of object check
 
 
+for gbifid in checklist:
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
 
-# show some statistics
+for gbifid in blacklist:
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
 
+csv_file.to_csv(PATH_TO_LABELS, index=False)

@@ -12,7 +12,8 @@ import pandas as pd
 
 class MothDataset(Dataset):
     def __init__(self, csv_file, root_dir, transform=None):
-        self.data_frame = pd.read_csv(csv_file)
+        #self.data_frame = pd.read_csv(csv_file)[['gbifID', 'scientificName']]
+        self.data_frame = csv_file
         self.root_dir = root_dir
         self.transform = transform
         self.label_encoder = LabelEncoder()
