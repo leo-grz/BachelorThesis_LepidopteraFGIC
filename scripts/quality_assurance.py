@@ -1,13 +1,17 @@
 
-# This script takes a tensor file (244x244x3) and assigns them to either blacklist or manualcheck
-# it does not look at any images contained in manualcheck, blacklist or whitelist
-
-# should a qa_checked_and_approved.txt file be used?
+'''
+This script takes a tensor file (244x244x3) and assigns them to either blacklist or manualcheck
+it does not look at any images contained in manualcheck, blacklist or whitelist. The outcomes of the check
+are written to the csv file in the status column.
+It's the script to be executed before moving on the manual_checker.py
+'''
 
 # Imports
 import sys 
 import os 
 import pandas as pd
+import numpy as np
+import cv2
 from torch.utils.data import DataLoader
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
@@ -19,12 +23,16 @@ PATH_TO_PROCESSED = 'C:/Users/Leo/Desktop/BA_MothClassification/data/processed/'
 PATH_TO_LABELS = PATH_TO_PROCESSED + 'testing_dataset_top20x50.csv'
 PATH_TO_IMAGES = PATH_TO_PROCESSED + 'testing_dataset_top20x50_images'
 
+DARKNESS_BLACKLIST_THRESHOLD = 0.05
+DARKNESS_CHECKLIST_THRESHOLD = 0.15
+CONTOUR_CHECKLIST_THRESHOLD = 50
+
 
 # prepare rows not containing BLACK / CHECK to be inspected by brightness check and objective size estimation
 csv_file = pd.read_csv(PATH_TO_LABELS)
-csv_file['status'] = csv_file['status'].astype('str')
-csv_file_filtered = csv_file[~csv_file['status'].isin(['CHECK', 'BLACK'])]
-csv_file_for_loader = csv_file_filtered[['gbifID', 'scientificName']]
+csv_file['status'] = csv_file['status'].astype('str') # to ensure status (CHECK, WHITE, BLACK) is of type string
+csv_file_filtered = csv_file[~csv_file['status'].isin(['CHECK', 'BLACK'])] # selects all samples which's status has not been set to CHECK or BLACK
+csv_file_for_loader = csv_file_filtered[['gbifID', 'scientificName']] # to pass only relevant fields to MothDataset Class
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),  # Resize to match ResNet input size
@@ -32,26 +40,66 @@ transform = transforms.Compose([
 ])
 
 full_dataset = MothDataset(csv_file=csv_file_for_loader, root_dir=PATH_TO_IMAGES, transform=transform)
-
-# only process files who's filenames are not already in whitelist, manualcheck or blacklist
-
 dataloader = DataLoader(full_dataset, batch_size=100, shuffle=False)
 
 blacklist = []
 checklist = []
 
-# Brightness check
-
 def calculate_darkness(tensor):
+    ''' 
+    Calculate the darkness of an image tensor. 
+    
+    The function converts an RGB tensor to grayscale, computes the average pixel intensity, 
+    and determines returns values based on which the further computation of the sample is determined. 
+    
+    Parameters: 
+    tensor (torch.Tensor): A tensor of shape (3, H, W) representing an RGB image. 
+    
+    Returns: 
+    tuple: 
+        - average_intensity (float): The average intensity of the grayscale image. 
+        - is_dark (bool): True if the average intensity is below the darkness threshold. 
+        - is_black (bool): True if the average intensity is below the absolute darkness threshold. 
+    '''
     grayscale_tensor = tensor.mean(dim=0) # convert to grayscale
     average_intensity = grayscale_tensor.mean().item() # calculate average pixel intensity
 
-    darkness_abs_threshold = 0.05
-    darkness_threshold = 0.15
-    is_dark = average_intensity < darkness_threshold
-    is_black = average_intensity < darkness_abs_threshold
+    is_dark = average_intensity < DARKNESS_CHECKLIST_THRESHOLD
+    is_black = average_intensity < DARKNESS_BLACKLIST_THRESHOLD
 
     return average_intensity, is_dark, is_black
+
+
+def estimate_object_size(tensor):
+    """
+    Calculate the size of the biggest object in the image.
+
+    This function processes an image tensor, converts it to grayscale, applies edge detection,
+    and finds the largest contour to estimate the object's size in pixels.
+
+    Parameters: 
+    tensor (torch.Tensor): A tensor of shape (3, H, W) representing an RGB image.
+
+    Returns:
+    tuple:
+        - area (int): Size of the biggest object in pixels (area of the largest contour).
+        - is_small (bool): True if the area is below the size threshold. 
+    """
+    array = tensor.numpy().transpose((1, 2, 0))
+    image = np.clip(array * 255, 0, 255).astype(np.uint8)
+
+    gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)  # Convert the image to grayscale
+    edges = cv2.Canny(gray, 100, 200)  # Apply Canny edge detector
+    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # Find contours
+
+    if contours:  # Calculate the area of the largest contour
+        largest_contour = max(contours, key=cv2.contourArea)
+        area = cv2.contourArea(largest_contour)
+        is_small = area < CONTOUR_CHECKLIST_THRESHOLD
+        return area, is_small
+    else:
+        return 0, False
+
 
 
 i = 0
@@ -62,21 +110,22 @@ for images, labels, gbifids, img_names in dataloader:
     for image, label, gbifid, img_name in zip(images, labels, gbifids, img_names):
 
         average_intensity, is_dark, is_black = calculate_darkness(image)
+        object_size, is_small = estimate_object_size(image)
+
         if is_black: # if image is without a doubt too dark, automatically add it to blacklist
             blacklist.append(int(gbifid))
             print(f'Average Intensity: {average_intensity} | Adding {img_name} to blacklist.')
 
-        elif is_dark: # add image to manual check list
+        elif is_dark or is_small: # add image to manual check list
             checklist.append(int(gbifid))
             print(f'Average Intensity: {average_intensity} | Adding {img_name} to checklist.')
 
-# Size of object check
 
 
-for gbifid in checklist:
+for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py
     csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
 
-for gbifid in blacklist:
+for gbifid in blacklist: # write BLACK status for csv file
     csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
 
-csv_file.to_csv(PATH_TO_LABELS, index=False)
+csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file
