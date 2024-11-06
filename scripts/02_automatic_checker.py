@@ -1,6 +1,5 @@
-
 '''
-This script takes a tensor file (244x244x3) and assigns them to either blacklist or manualcheck
+This script takes an image as tensor (244x244x3) and assigns them to either blacklist or manualcheck
 it does not look at any images contained in manualcheck, blacklist or whitelist. The outcomes of the check
 are written to the csv file in the status column.
 It's the script to be executed before moving on the manual_checker.py
@@ -19,9 +18,9 @@ from moth_dataset import MothDataset
 
 # Config
 
-PATH_TO_PROCESSED = 'C:/Users/Leo/Desktop/BA_MothClassification/data/processed/'
-PATH_TO_LABELS = PATH_TO_PROCESSED + 'testing_dataset_top20x50.csv'
-PATH_TO_IMAGES = PATH_TO_PROCESSED + 'testing_dataset_top20x50_images'
+PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
+PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
+PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
 
 DARKNESS_BLACKLIST_THRESHOLD = 0.05
 DARKNESS_CHECKLIST_THRESHOLD = 0.15
@@ -31,7 +30,14 @@ CONTOUR_CHECKLIST_THRESHOLD = 50
 # prepare rows not containing BLACK / CHECK to be inspected by brightness check and objective size estimation
 csv_file = pd.read_csv(PATH_TO_LABELS)
 csv_file['status'] = csv_file['status'].astype('str') # to ensure status (CHECK, WHITE, BLACK) is of type string
-csv_file_filtered = csv_file[~csv_file['status'].isin(['CHECK', 'BLACK'])] # selects all samples which's status has not been set to CHECK or BLACK
+
+if 'NEW' in csv_file['status'].values:
+    csv_file_filtered = csv_file[csv_file['status'] == 'NEW'] # select all samples with status NEW if they exist
+    mode_new = True
+else:
+    csv_file_filtered = csv_file[~csv_file['status'].isin(['CHECK', 'BLACK'])] # selects all samples which's status has not been set to CHECK or BLACK
+    mode_new = False
+
 csv_file_for_loader = csv_file_filtered[['gbifID', 'scientificName']] # to pass only relevant fields to MothDataset Class
 
 transform = transforms.Compose([
@@ -44,6 +50,7 @@ dataloader = DataLoader(full_dataset, batch_size=100, shuffle=False)
 
 blacklist = []
 checklist = []
+ignorelist = []
 
 def calculate_darkness(tensor):
     ''' 
@@ -101,13 +108,14 @@ def estimate_object_size(tensor):
         return 0, False
 
 
-
 i = 0
 for images, labels, gbifids, img_names in dataloader:
     i +=1
     print(f'Bach [{i}/{len(dataloader)}]')
     
     for image, label, gbifid, img_name in zip(images, labels, gbifids, img_names):
+        if mode_new:
+            print('[MODE_NEW] Processing Sample with ID {gbifid} and Filename {image_name}')
 
         average_intensity, is_dark, is_black = calculate_darkness(image)
         object_size, is_small = estimate_object_size(image)
@@ -119,13 +127,18 @@ for images, labels, gbifids, img_names in dataloader:
         elif is_dark or is_small: # add image to manual check list
             checklist.append(int(gbifid))
             print(f'Average Intensity: {average_intensity} | Adding {img_name} to checklist.')
+        else:
+            ignorelist.append(int(gbifid))
 
 
 
 for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py
     csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
 
-for gbifid in blacklist: # write BLACK status for csv file
+for gbifid in blacklist: # write BLACK status to csv file
     csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
+
+for gbifid in ignorelist: # write BLACK status to csv file
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'IGNORED'
 
 csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file

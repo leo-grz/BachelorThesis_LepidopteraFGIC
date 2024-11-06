@@ -16,9 +16,9 @@ from moth_dataset import MothDataset
 
 # Config
 
-PATH_TO_PROCESSED = 'C:/Users/Leo/Desktop/BA_MothClassification/data/processed/'
-PATH_TO_LABELS = PATH_TO_PROCESSED + 'testing_dataset_top20x50.csv'
-PATH_TO_IMAGES = PATH_TO_PROCESSED + 'testing_dataset_top20x50_images'
+PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
+PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
+PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
 
 csv_file = pd.read_csv(PATH_TO_LABELS)
 csv_file['status'] = csv_file['status'].astype('str')

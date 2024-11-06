@@ -1,5 +1,5 @@
 '''
-This script is used to download the 1.8 million sample dataset from occurrences.org. The estimated size 
+This script is used to download the 1.3 million sample dataset from occurrences.org. The estimated size 
 of the download is ca. 270 GB and will take about 7 days at a download speed of two images per second.
 '''
 
@@ -9,20 +9,19 @@ import requests
 import pandas as pd
 import numpy as np
 import time
+import datetime
 import logging
 
 # Config 
 
-PATH_TO_PROCESSED = 'C:/Users/Leo/Desktop/BA_MothClassification/data/processed/'
-PATH_TO_LABELS = PATH_TO_PROCESSED + 'dataset_top589_max5000_TESTING.csv'
+PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
+PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
+PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
+PATH_TO_LOGFILE = PATH_TO_DATA + 'status/download_top589_max3000.log'
+PATH_TO_FAILED_DL_CSV = PATH_TO_DATA + 'status/failed_dl_of_top589_max3000.csv'
 
-PATH_TO_CURRENT = 'C:/Users/Leo/Desktop/BA_MothClassification/scripts/download_test/'
-PATH_TO_OUTPUT_FOLDER = PATH_TO_CURRENT + 'images/' # /mnt/data/some_folder
-PATH_TO_LOGFILE = PATH_TO_CURRENT + 'download.log'
-PATH_TO_FAILED_DL_CSV = PATH_TO_CURRENT + 'failed_dl_of_top589_max5000.csv'
-
-SIZE_AVG_RESET = 10 # amount of downloads after an Average should be printed to logfile
-SLEEPING_DURATION = 0.5
+SIZE_AVG_RESET = 1000 # amount of downloads after an Average should be printed to logfile
+SLEEPING_DURATION = 500
 
 # Configure logging
 logging.basicConfig(
@@ -32,6 +31,9 @@ logging.basicConfig(
 )
 
 dataset = pd.read_csv(PATH_TO_LABELS, low_memory=False)
+
+if 'NEW' in dataset['status'].values: # if there exist NEW labelled samples, only download them
+    dataset = dataset[dataset['status'] == 'NEW']
 
 sizes = []
 averages = []
@@ -48,24 +50,34 @@ def append_row_to_csv(file_path, row):
         writer.writerow(row)
 
 def download_image(image_id, image_url):
-
-    response = requests.get(image_url)
-    original_filename = image_url.split('/')[-1]
-    output_filename = f'{image_id}_{original_filename}'    
-    
-    if response.status_code == 200: # Check if the request was successful
-        # Save the image to the local directory
-        with open(f'{PATH_TO_OUTPUT_FOLDER}/{output_filename}', 'wb') as file:
-            file.write(response.content)
-        content_length = int(response.headers.get('Content-Length')) / 1024
-        sizes.append(content_length)
-        return 0
-    else:
+    try:
+        response = requests.get(image_url, timeout=5)
+        original_filename = image_url.split('/')[-1]
+        output_filename = f'{image_id}_{original_filename}' 
+        
+        if response.status_code == 200: # Check if the request was successful
+            # Save the image to the local directory
+            with open(f'{PATH_TO_IMAGES}/{output_filename}', 'wb') as file:
+                file.write(response.content)
+            content_length = int(response.headers.get('Content-Length')) / 1024
+            sizes.append(content_length)
+            return 0
+        else:
+            return 1
+    except requests.exceptions.Timeout: 
+        print(f"The request timed out while trying to download [ID: {image_id}] -> {image_url}")
         return 1
+    except requests.exceptions.ConnectionError: 
+        print(f"Max retries exceeded while trying to download [ID: {image_id}] -> {image_url}")
+        return 1
+
 try:
-    used_dataset = dataset[0:50]
+    used_dataset = dataset[0:]
 
     for index, row in used_dataset.iterrows():
+
+        start_time = datetime.datetime.now()
+
         image_id = row['gbifID']
         image_url = row['identifier']
         image_label = row['scientificName']
@@ -95,7 +107,10 @@ try:
             dl_attempts_batch = 0
             dl_fails_batch = 0
 
-        time.sleep(SLEEPING_DURATION)
+        
+        while not start_time + datetime.timedelta(milliseconds=SLEEPING_DURATION) <= datetime.datetime.now(): 
+            time.sleep(0.01)
+
 
     logging.info(f'[FINISHED] Estimated size according to averages: {round(sum(averages) * SIZE_AVG_RESET / (1024**2), 4)} GB')
     logging.info(f'[FINISHED] Amount of failed download attempts: {dl_fails}')
