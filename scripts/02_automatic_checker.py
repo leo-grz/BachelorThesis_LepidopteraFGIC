@@ -107,6 +107,46 @@ def estimate_object_size(tensor):
     else:
         return 0, False
 
+def is_contour_at_edge(contour, img_shape):
+    for point in contour:
+        if point[0][0] == 0 or point[0][1] == 0 or point[0][0] == img_shape[1] - 1 or point[0][1] == img_shape[0] - 1:
+            return True
+    return False
+
+def filter_image(tensor, contour_threshold=100):
+    array = tensor.numpy().transpose((1, 2, 0))
+    image = np.clip(array * 255, 0, 255).astype(np.uint8)
+
+    gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)  # Convert the image to grayscale
+    edges = cv2.Canny(gray, 50, 100)  # Apply Canny edge detector with adjusted thresholds
+    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # Find contours
+    valid_contours = [contour for contour in contours if not is_contour_at_edge(contour, image.shape)]
+    valid_contours = [contour for contour in contours if 500 < cv2.contourArea(contour) < 35000]
+
+    # for contour in contours:
+    #     print(int(cv2.contourArea(contour)))
+    #     print(500 < int(cv2.contourArea(contour)) < 40000)
+
+    if valid_contours:
+        largest_contour = max(valid_contours, key=cv2.contourArea)
+        area = cv2.contourArea(largest_contour)
+
+        # Filter based on the number of valid contours and the area of the largest valid contour
+        if len(valid_contours) > 5:
+            print(f"Filtered due to multiple butterflies. Contours: {len(valid_contours)}")
+            return area, True
+        elif area < contour_threshold:
+            print(f"Filtered due to weak contour. Area: {area}")
+            return area, True
+        else:
+            return area, False
+    else:
+        print("Filtered due to no valid contours.")
+        return 0, True
+
+# Example usage with a sample tensor and threshold
+# filtered_area, is_filtered = filter_image(sample_tensor, contour_threshold=100)
+
 
 i = 0
 for images, labels, gbifids, img_names in dataloader:
@@ -119,10 +159,12 @@ for images, labels, gbifids, img_names in dataloader:
 
         average_intensity, is_dark, is_black = calculate_darkness(image)
         object_size, is_small = estimate_object_size(image)
+        #object_size, is_small = filter_image(image)
 
         if is_black: # if image is without a doubt too dark, automatically add it to blacklist
             blacklist.append(int(gbifid))
-            print(f'Average Intensity: {average_intensity} | Adding {img_name} to blacklist.')
+            print(f'Average Intensity: {average_intensity} | Addi
+                  ng {img_name} to blacklist.')
 
         elif is_dark or is_small: # add image to manual check list
             checklist.append(int(gbifid))
@@ -130,6 +172,8 @@ for images, labels, gbifids, img_names in dataloader:
         else:
             ignorelist.append(int(gbifid))
 
+
+input('Press a key to write changes to csv file.')
 
 
 for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py

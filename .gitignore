@@ -1,6 +1,10 @@
 data/raw/
 data/processed/
+data/status/
 
 .ipynb_checkpoints
 __pycache__/
 .vscode/
+.tokens/
+scripts/download_test/
+testing/
