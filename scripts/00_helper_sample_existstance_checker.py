@@ -8,45 +8,47 @@ import os
 
 # Config
 
-PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
-PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
-PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
+PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/processed/'
+PATH_TO_LABELS = PATH_TO_DATA + 'dataset_top589_max3000.csv'
+PATH_TO_IMAGES = '/mnt/data/lgierz/moth_dataset_top589_max3000/'
 
-
-
+print(f'[ok] Readng in csv file: {PATH_TO_LABELS}')
 csv_file = pd.read_csv(PATH_TO_LABELS)
-gbifids = csv_file['gbifID'].values
+csv_file['status'] = csv_file['status'].astype('str')
 
-missing_files = []
-missing_labels = []
+print(f'[ok] Creating label gbifid list.')
+label_gbifids = csv_file['gbifID'].values
+label_gbifids = [int(gbifid) for gbifid in label_gbifids]
+
+print(f'[ok] Creating image gbifid list.')
+listdir = os.listdir(PATH_TO_IMAGES)
+image_gbifids = [int(filename.split('_')[0]) for filename in listdir]
+
+print(f'[ok] Converting gbif lists to sets.')
+# Convert lists to sets 
+label_gbifids_set = set(label_gbifids) 
+image_gbifids_set = set(image_gbifids) 
+
+print(f'[ok] Comparing sets.\n')
+# Find values unique to each list 
+unique_label_gbifids = label_gbifids_set - image_gbifids_set 
+unique_image_gbifids = image_gbifids_set - label_gbifids_set 
+
+# Convert sets back to lists (if needed) 
+unique_label_gbifids = list(unique_label_gbifids) 
+unique_image_gbifids = list(unique_image_gbifids) 
+
+# Print the results 
+print(f"Unique Label gbifIDs: {len(unique_label_gbifids)}") 
+print(f"Unique Image gbifIDs: {len(unique_image_gbifids)}")
 
 
-
-for gbifid in gbifids: # check if image exists for existing label
-    files = [f for f in os.listdir(PATH_TO_IMAGES) if f.startswith(str(gbifid))]
-    if not files:
-        missing_files.append(gbifid)
-        print(f'No image found for label with ID {id}')
-
-
-
-for image in os.listdir(PATH_TO_IMAGES): # check if label exists for existing image
-    gbifid = image.split('_')[0]
-    if not int(gbifid) in gbifids:
-        missing_labels.append(gbifid)
-        print(f'No label found for image with ID {gbifid}')
-        
-
-
-print(f'Amount of images: {len(os.listdir(PATH_TO_IMAGES))}')
-if len(missing_files) > 0: 
-    print(f'There are {len(missing_files)} images missing for labels with IDs: \n{missing_files}')
+# Update statuses
+if input('Press 1 to change status of missing images for labels to "MISSING"') == '1':
+    print('[ok] Updating statuses.')
+    for gbifid in unique_label_gbifids: # write MISSING status to csv file
+        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'MISSING'
+    csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file
+    print('[ok] Done. Exiting...')
 else:
-    print('All images found.')
-
-
-print(f'Amount of labels: {len(gbifids)}')
-if len(missing_labels) > 0:
-    print(f'There are {len(missing_labels)} labels missing for images with IDs: \n{missing_labels}')
-else:
-    print('All labels found.')
+    print('[!!] Not updating statuses. Exiting...')

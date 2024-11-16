@@ -26,6 +26,8 @@ DARKNESS_BLACKLIST_THRESHOLD = 0.05
 DARKNESS_CHECKLIST_THRESHOLD = 0.15
 CONTOUR_CHECKLIST_THRESHOLD = 50
 
+STATES_TO_IGNORE= ['CHECK', 'BLACK', 'MISSING']
+
 
 # prepare rows not containing BLACK / CHECK to be inspected by brightness check and objective size estimation
 csv_file = pd.read_csv(PATH_TO_LABELS)
@@ -35,17 +37,17 @@ if 'NEW' in csv_file['status'].values:
     csv_file_filtered = csv_file[csv_file['status'] == 'NEW'] # select all samples with status NEW if they exist
     mode_new = True
 else:
-    csv_file_filtered = csv_file[~csv_file['status'].isin(['CHECK', 'BLACK'])] # selects all samples which's status has not been set to CHECK or BLACK
+    csv_file_filtered = csv_file[~csv_file['status'].isin(STATES_TO_IGNORE)] # selects all samples which's status has not been set to CHECK or BLACK or MISSING
     mode_new = False
 
-csv_file_for_loader = csv_file_filtered[['gbifID', 'scientificName']] # to pass only relevant fields to MothDataset Class
+csv_file_for_ds = csv_file_filtered[['gbifID', 'scientificName']] # to pass only relevant fields to MothDataset Class
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),  # Resize to match ResNet input size
     transforms.ToTensor(),          # Convert to tensor
 ])
 
-full_dataset = MothDataset(csv_file=csv_file_for_loader, root_dir=PATH_TO_IMAGES, transform=transform)
+full_dataset = MothDataset(csv_file=csv_file_for_ds, root_dir=PATH_TO_IMAGES, transform=transform)
 dataloader = DataLoader(full_dataset, batch_size=100, shuffle=False)
 
 blacklist = []
@@ -144,10 +146,6 @@ def filter_image(tensor, contour_threshold=100):
         print("Filtered due to no valid contours.")
         return 0, True
 
-# Example usage with a sample tensor and threshold
-# filtered_area, is_filtered = filter_image(sample_tensor, contour_threshold=100)
-
-
 i = 0
 for images, labels, gbifids, img_names in dataloader:
     i +=1
@@ -155,7 +153,7 @@ for images, labels, gbifids, img_names in dataloader:
     
     for image, label, gbifid, img_name in zip(images, labels, gbifids, img_names):
         if mode_new:
-            print('[MODE_NEW] Processing Sample with ID {gbifid} and Filename {image_name}')
+            print(f'[MODE_NEW] Processing Sample with ID {gbifid} and Filename {img_name}')
 
         average_intensity, is_dark, is_black = calculate_darkness(image)
         object_size, is_small = estimate_object_size(image)
@@ -173,16 +171,20 @@ for images, labels, gbifids, img_names in dataloader:
             ignorelist.append(int(gbifid))
 
 
-input('Press a key to write changes to csv file.')
+if input('Press 1 to update the csv file.') == '1':
+    print('[ok] Updating csv file.')
 
+    for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py
+        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
 
-for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py
-    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
+    for gbifid in blacklist: # write BLACK status to csv file
+        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
 
-for gbifid in blacklist: # write BLACK status to csv file
-    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
+    for gbifid in ignorelist: # write BLACK status to csv file
+        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'IGNORED'
 
-for gbifid in ignorelist: # write BLACK status to csv file
-    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'IGNORED'
+    csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file
 
-csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file
+    print('[ok] Done. Exiting...')
+else:
+    print('[!!] Not updating csv file. Exiting...')
