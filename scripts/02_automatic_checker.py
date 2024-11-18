@@ -13,7 +13,7 @@ import numpy as np
 from torch.utils.data import DataLoader
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from moth_dataset import MothDataset
+from lepidoptera_dataset import LepidopteraDataset
 import torch
 
 # Config
@@ -46,7 +46,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),          # Convert to tensor
 ])
 
-full_dataset = MothDataset(csv_file=csv_file_filtered, root_dir=PATH_TO_IMAGES, transform=transform)
+full_dataset = LepidopteraDataset(csv_file=csv_file_filtered, root_dir=PATH_TO_IMAGES, transform=transform)
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'[ok] Device chosen: {device}')
 dataloader = DataLoader(full_dataset, batch_size=1000, shuffle=False)

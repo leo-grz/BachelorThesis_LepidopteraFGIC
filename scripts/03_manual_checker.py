@@ -12,7 +12,7 @@ import pandas as pd
 from torch.utils.data import DataLoader
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
-from moth_dataset import MothDataset
+from lepidoptera_dataset import LepidopteraDataset
 
 # Config
 
@@ -30,7 +30,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),          # Convert to tensor
 ])
 
-check_dataset = MothDataset(csv_file=csv_file_for_loader, root_dir=PATH_TO_IMAGES, transform=transform)
+check_dataset = LepidopteraDataset(csv_file=csv_file_for_loader, root_dir=PATH_TO_IMAGES, transform=transform)
 dataloader = DataLoader(check_dataset, batch_size=25, shuffle=False)
 
 whitelist = []

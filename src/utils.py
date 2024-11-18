@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import os
-from moth_dataset import MothDataset
 
 
 def show_sample(image, label, label_dec, gbifid, image_name, predicted=None, predicted_dec=None):
