@@ -10,7 +10,6 @@ import sys
 import os 
 import pandas as pd
 import numpy as np
-import cv2
 from torch.utils.data import DataLoader
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
@@ -89,10 +88,9 @@ for batch, (images, labels, gbifids, img_names) in enumerate(dataloader, start=1
 
         if is_black: # if image is without a doubt too dark, automatically add it to blacklist
             blacklist.append(int(gbifid))
-            print(f'Average Intensity: {average_intensity} | Addi
-                  ng {img_name} to blacklist.')
+            print(f'Average Intensity: {average_intensity} | Adding {img_name} to blacklist.')
 
-        elif is_dark or is_small: # add image to manual check list
+        elif is_dark: # add image to manual check list
             checklist.append(int(gbifid))
             print(f'Average Intensity: {average_intensity} | Adding {img_name} to checklist.')
         else:
