@@ -14,6 +14,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 from moth_dataset import MothDataset
+import torch
 
 # Config
 
@@ -38,15 +39,18 @@ else:
     csv_file_filtered = csv_file[~csv_file['status'].isin(STATES_TO_IGNORE)] # selects all samples which's status has not been set to CHECK or BLACK or MISSING
     mode_new = False
 
-csv_file_for_ds = csv_file_filtered[['gbifID', 'scientificName']] # to pass only relevant fields to MothDataset Class
+csv_file_filtered.reset_index(drop=True, inplace=True)
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),  # Resize to match ResNet input size
     transforms.ToTensor(),          # Convert to tensor
 ])
 
-full_dataset = MothDataset(csv_file=csv_file_for_ds, root_dir=PATH_TO_IMAGES, transform=transform)
-dataloader = DataLoader(full_dataset, batch_size=100, shuffle=False)
+full_dataset = MothDataset(csv_file=csv_file_filtered, root_dir=PATH_TO_IMAGES, transform=transform)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f'[ok] Device chosen: {device}')
+dataloader = DataLoader(full_dataset, batch_size=1000, shuffle=False)
+print('[ok] Initialized Dataloader.')
 
 blacklist = []
 checklist = []
@@ -79,6 +83,8 @@ def calculate_darkness(tensor):
 
 for batch, (images, labels, gbifids, img_names) in enumerate(dataloader, start=1):
     print(f'Bach [{batch}/{len(dataloader)}]')
+    
+    images = images.to(device)
     
     for image, label, gbifid, img_name in zip(images, labels, gbifids, img_names):
         if mode_new:
