@@ -4,9 +4,19 @@ import torch
 from torch.utils.data import Dataset
 
 from sklearn.preprocessing import LabelEncoder
-
-from PIL import Image
+from PIL import Image, UnidentifiedImageError
 import os
+from time import perf_counter as pc
+import logging
+
+PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/'
+PATH_TO_LOGFILE = PATH_TO_DATA + 'status/lepidoptera_dataset.log'
+
+logging.basicConfig(
+    filename=PATH_TO_LOGFILE,
+    level=logging.INFO,
+    format='[%(asctime)s][%(levelname)s] - %(message)s',
+)
 
 class LepidopteraDataset(Dataset):
     def __init__(self, csv_file, root_dir, transform):
@@ -23,20 +33,31 @@ class LepidopteraDataset(Dataset):
             if file_name.endswith('.jpg'):
                 gbif_id = file_name.split('_')[0]
                 self.index[gbif_id] = os.path.join(self.root_dir, file_name)
-        print("[ok] In-memory index built.")
+        print("[LEPIDOPTERA_DATASET] In-memory index built.")
 
     def __len__(self):
         return len(self.data_frame)
 
     def __getitem__(self, idx):
-        gbif_id = self.data_frame.loc[idx, 'gbifID']
-        img_path = self.index[str(gbif_id)]  # Select the first matching file from the index
-        image = Image.open(img_path).convert("RGB")
-        label = self.data_frame.loc[idx, 'scientificName_encoded']
+        #_st = pc()
         gbifid = self.data_frame.loc[idx, 'gbifID']
-        image_tensor = self.transform(image)
-        label_tensor = torch.tensor(label, dtype=torch.long)
+        img_path = self.index[str(gbifid)]  # Select the first matching file from the index
+        label = self.data_frame.loc[idx, 'scientificName_encoded']
 
+        try: 
+            with Image.open(img_path) as img:  # use OpenCV for faster operations
+                image = img.convert("RGB")
+            image_tensor = self.transform(image)
+            label_tensor = torch.tensor(label, dtype=torch.long)
+
+        except (UnidentifiedImageError, OSError) as e:
+            image_tensor = torch.rand((3,224,224)) # random tensor to not confuse data loader
+            label = (label + 1) * -1 # to keep the label while addressing error (+1 bc -0 doesnt exist)
+            label_tensor = torch.tensor(label, dtype=torch.long)
+            #print(f'[LEPIDOPTERA_DATASET][ERROR] {e}')
+            logging.error(f'[LEPIDOPTERA_DATASET] Image with gbifID {gbifid} couldn\'t be processed. Error: {e}')
+        #_dur = pc() - _st
+        #if _dur > 0.5: logging.error(f'[LEPIDOPTERA_DATASET] IMAGE WITH ID {gbifid} TOOK {_dur} SECONDS')
         return image_tensor, label_tensor, gbifid, img_path.split('/')[-1]  # Returning the image, label, ID and img_name
 
     def decode_label(self, encoded_label):
