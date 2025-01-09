@@ -14,10 +14,10 @@ import logging
 
 # Config 
 
-PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
-PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
-PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
-PATH_TO_LOGFILE = PATH_TO_DATA + 'status/download_top589_max3000.log'
+PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/'
+PATH_TO_LABELS = PATH_TO_DATA + 'processed/features/dataset_top589_max3000_fex_statusupdate.csv'
+PATH_TO_IMAGES = '/mnt/data/lgierz/moth_dataset_top589_max3000'
+PATH_TO_LOGFILE = PATH_TO_DATA + 'status/download_SEEN.log'
 PATH_TO_FAILED_DL_CSV = PATH_TO_DATA + 'status/failed_dl_of_top589_max3000.csv'
 
 SIZE_AVG_RESET = 1000 # amount of downloads after an Average should be printed to logfile
@@ -32,9 +32,13 @@ logging.basicConfig(
 
 dataset = pd.read_csv(PATH_TO_LABELS, low_memory=False)
 
-if 'NEW' in dataset['status'].values: # if there exist NEW labelled samples, only download them
-    dataset = dataset[dataset['status'] == 'NEW']
+# filter out specific status
+sample_status = 'MISSING'
+if sample_status in dataset['status'].values:
+    
+    dataset = dataset[dataset['status'] == sample_status]
 
+print('A')
 sizes = []
 averages = []
 
@@ -73,7 +77,8 @@ def download_image(image_id, image_url):
 
 try:
     used_dataset = dataset[0:]
-
+    input(f' length, Proceed? LEN {len(used_dataset)}')
+    print('B')
     for index, row in used_dataset.iterrows():
 
         start_time = datetime.datetime.now()

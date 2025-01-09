@@ -44,7 +44,7 @@ print(f"Unique Image gbifIDs: {len(unique_image_gbifids)}")
 
 
 # Update statuses
-if input('Press 1 to change status of missing images for labels to "MISSING"') == '1':
+if input('Press 1 to change status of missing images for labels to "MISSING": ') == '1':
     print('[ok] Updating statuses.')
     for gbifid in unique_label_gbifids: # write MISSING status to csv file
         csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'MISSING'

@@ -16,21 +16,22 @@ from lepidoptera_dataset import LepidopteraDataset
 
 # Config
 
-PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
-PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
-PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
+PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/'
+PATH_TO_LABELS = PATH_TO_DATA + 'processed/dataset_top589_max3000.csv'
+PATH_TO_IMAGES = '/mnt/data/lgierz/moth_dataset_top589_max3000'
 
 csv_file = pd.read_csv(PATH_TO_LABELS)
 csv_file['status'] = csv_file['status'].astype('str')
+
 csv_file_filtered = csv_file[csv_file['status'] == 'CHECK'] # select all samples with status CHECK
-csv_file_for_loader = csv_file_filtered[['gbifID', 'scientificName']] # forward only relevant columns with status CHECK
+csv_file_filtered.reset_index(drop=True, inplace=True)
 
 transform = transforms.Compose([
     transforms.Resize((224, 224)),  # Resize to match ResNet input size
     transforms.ToTensor(),          # Convert to tensor
 ])
 
-check_dataset = LepidopteraDataset(csv_file=csv_file_for_loader, root_dir=PATH_TO_IMAGES, transform=transform)
+check_dataset = LepidopteraDataset(csv_file=csv_file_filtered, root_dir=PATH_TO_IMAGES, transform=transform)
 dataloader = DataLoader(check_dataset, batch_size=25, shuffle=False)
 
 whitelist = []

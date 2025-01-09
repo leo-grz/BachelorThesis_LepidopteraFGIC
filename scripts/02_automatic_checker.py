@@ -4,7 +4,6 @@ it does not look at any images contained in manualcheck, blacklist or whitelist.
 are written to the csv file in the status column.
 It's the script to be executed before moving on the manual_checker.py
 '''
-
 # Imports
 import sys 
 import os 
@@ -15,30 +14,32 @@ from torchvision import transforms
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
 from lepidoptera_dataset import LepidopteraDataset
 import torch
-
+import logging
+import gc
 # Config
 
-PATH_TO_DATA = 'C:/Users/Leo/Desktop/BA_MothClassification/data/'
-PATH_TO_LABELS = PATH_TO_DATA + 'processed/testing_dataset_top20_max50.csv'
-PATH_TO_IMAGES = PATH_TO_DATA + 'processed/testing_dataset_top20_max50_images'
+PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/'
+PATH_TO_LABELS = PATH_TO_DATA + 'processed/dataset_top589_max3000.csv'
+PATH_TO_IMAGES = '/mnt/data/lgierz/moth_dataset_top589_max3000'
+PATH_TO_LOGFILE = PATH_TO_DATA + 'status/automatic_checker.log'
 
-DARKNESS_BLACKLIST_THRESHOLD = 0.05
-DARKNESS_CHECKLIST_THRESHOLD = 0.1
+DARKNESS_BLACKLIST_THRESHOLD = 0.01
+DARKNESS_CHECKLIST_THRESHOLD = 0.06
 
-STATES_TO_IGNORE= ['CHECK', 'BLACK', 'MISSING']
+STATES_TO_IGNORE= ['CHECK', 'BLACK', 'MISSING', 'SEEN', 'ERROR']
 
+
+logging.basicConfig(
+    filename=PATH_TO_LOGFILE,
+    level=logging.INFO,
+    format='[%(asctime)s][%(levelname)s] - %(message)s',
+)
 
 # prepare rows not containing BLACK / CHECK to be inspected by brightness check and objective size estimation
 csv_file = pd.read_csv(PATH_TO_LABELS)
 csv_file['status'] = csv_file['status'].astype('str') # to ensure status (CHECK, WHITE, BLACK) is of type string
 
-if 'NEW' in csv_file['status'].values:
-    csv_file_filtered = csv_file[csv_file['status'] == 'NEW'] # select all samples with status NEW if they exist
-    mode_new = True
-else:
-    csv_file_filtered = csv_file[~csv_file['status'].isin(STATES_TO_IGNORE)] # selects all samples which's status has not been set to CHECK or BLACK or MISSING
-    mode_new = False
-
+csv_file_filtered = csv_file[~csv_file['status'].isin(STATES_TO_IGNORE)] # selects all samples which's status has not been set to CHECK or BLACK or MISSING
 csv_file_filtered.reset_index(drop=True, inplace=True)
 
 transform = transforms.Compose([
@@ -47,14 +48,14 @@ transform = transforms.Compose([
 ])
 
 full_dataset = LepidopteraDataset(csv_file=csv_file_filtered, root_dir=PATH_TO_IMAGES, transform=transform)
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f'[ok] Device chosen: {device}')
-dataloader = DataLoader(full_dataset, batch_size=1000, shuffle=False)
-print('[ok] Initialized Dataloader.')
+logging.info(f'[INIT] Device chosen: {device}')
+dataloader = DataLoader(full_dataset, batch_size=1000, shuffle=False, num_workers=24, prefetch_factor=2)#, pin_memory=True)
 
-blacklist = []
-checklist = []
-ignorelist = []
+print('[ok] Initialized Dataloader.')
+logging.info(f'[INIT] Initialized Dataloader')
 
 def calculate_darkness(tensor):
     ''' 
@@ -80,43 +81,69 @@ def calculate_darkness(tensor):
 
     return average_intensity, is_dark, is_black
 
+checklist, blacklist, seenlist, errorlist = [], [], [], []
+seen_count = 0
+error_count = 0
+black_count = 0
+check_count = 0
 
 for batch, (images, labels, gbifids, img_names) in enumerate(dataloader, start=1):
-    print(f'Bach [{batch}/{len(dataloader)}]')
-    
+    print(f'Batch [{batch}/{len(dataloader)}] with {len(gbifids)} samples')
+    logging.info(f'[BATCH][{batch}/{len(dataloader)}] with {len(gbifids)} samples')
     images = images.to(device)
     
+    
     for image, label, gbifid, img_name in zip(images, labels, gbifids, img_names):
-        if mode_new:
-            print(f'[MODE_NEW] Processing Sample with ID {gbifid} and Filename {img_name}')
 
+        if int(label) < 0: # if image label is negative, it indicates an error
+            errorlist.append(int(gbifid))
+            real_label = (int(label)-1) * -1
+            logging.error(f'[SAMPLE][ERROR] Adding {img_name} to errorlist. (Label: {real_label} | gbifID: {gbifid})')
+            continue
+        
         average_intensity, is_dark, is_black = calculate_darkness(image)
 
         if is_black: # if image is without a doubt too dark, automatically add it to blacklist
             blacklist.append(int(gbifid))
-            print(f'Average Intensity: {average_intensity} | Adding {img_name} to blacklist.')
-
+            print(f' Average Intensity: {average_intensity} | Adding {img_name} to blacklist.')
+            logging.info(f'[SAMPLE][BLACK] Adding {img_name} to blacklist. (Label: {int(label)} | gbifID: {gbifid})')
         elif is_dark: # add image to manual check list
             checklist.append(int(gbifid))
             print(f'Average Intensity: {average_intensity} | Adding {img_name} to checklist.')
+            logging.info(f'[SAMPLE][CHECK] Adding {img_name} to checklist.')
         else:
-            ignorelist.append(int(gbifid))
+            seenlist.append(int(gbifid))
+    
+    if batch % 50 == 0:
+        gc.collect() 
+        torch.cuda.empty_cache()
+        
 
+check_count += len(checklist)
+black_count += len(blacklist)
+seen_count += len(seenlist)
+error_count += len(errorlist)
 
-if input('Press 1 to update the csv file.') == '1':
-    print('[ok] Updating csv file.')
+        
+for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
 
-    for gbifid in checklist: # write CHECK status to csv file, these samples will manually be checked in manual_check.py
-        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'CHECK'
+for gbifid in blacklist: # write BLACK status to csv file
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
 
-    for gbifid in blacklist: # write BLACK status to csv file
-        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'BLACK'
+for gbifid in seenlist: # write SEEN status to csv file
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'SEEN'
 
-    for gbifid in ignorelist: # write BLACK status to csv file
-        csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'IGNORED'
+for gbifid in errorlist: # write ERROR status to csv file
+    csv_file.loc[csv_file['gbifID'] == gbifid, 'status'] = 'ERROR'
 
-    csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file
+logging.info(f'[FINAL REPORT][BLACK] Samples added to blacklist: {black_count}')
+logging.info(f'[FINAL REPORT][CHECK] Samples added to checklist: {check_count}')
+logging.info(f'[FINAL REPORT][SEEN] Samples added to seenlist: {seen_count}')
+logging.info(f'[FINAL REPORT][ERROR] Samples added to errorlist: {error_count}')
 
-    print('[ok] Done. Exiting...')
-else:
-    print('[!!] Not updating csv file. Exiting...')
+csv_file.to_csv(PATH_TO_LABELS, index=False) # save updated statuses to csv file
+logging.info(f'[FINAL REPORT] Amount of statuses updated in csv: {black_count + error_count + seen_count + check_count} | Exiting...')
+
+print('[ok] Done. Exiting...')
+

@@ -1,0 +1,346 @@
+nohup: ignoring input
+/home/lgierz/.local/lib/python3.8/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 01:59:21,438][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 35.32s, Accuracy: 0.0037, Precision: 0.0, Recall: 0.0037, F1-Score: 0.0001
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 01:59:32,538][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 10.83s, Accuracy: 0.0575, Precision: 0.0234, Recall: 0.0575, F1-Score: 0.0195
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 01:59:43,652][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 10.83s, Accuracy: 0.0411, Precision: 0.0148, Recall: 0.0411, F1-Score: 0.0136
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 01:59:55,272][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 11.41s, Accuracy: 0.0078, Precision: 0.0003, Recall: 0.0078, F1-Score: 0.0005
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:00:18,134][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 22.63s, Accuracy: 0.0182, Precision: 0.0033, Recall: 0.0182, F1-Score: 0.0049
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:00:41,400][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 23.0s, Accuracy: 0.0856, Precision: 0.0464, Recall: 0.0856, F1-Score: 0.0413
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:01:04,788][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 23.12s, Accuracy: 0.0589, Precision: 0.0342, Recall: 0.0589, F1-Score: 0.0235
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:01:27,164][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 22.1s, Accuracy: 0.0163, Precision: 0.0032, Recall: 0.0163, F1-Score: 0.0035
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:02:01,598][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 34.21s, Accuracy: 0.0156, Precision: 0.0036, Recall: 0.0156, F1-Score: 0.0045
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:02:35,037][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 33.16s, Accuracy: 0.1022, Precision: 0.0725, Recall: 0.1022, F1-Score: 0.0594
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:03:09,894][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 34.57s, Accuracy: 0.0674, Precision: 0.0407, Recall: 0.0674, F1-Score: 0.0302
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:03:43,284][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 33.13s, Accuracy: 0.0202, Precision: 0.0047, Recall: 0.0202, F1-Score: 0.0043
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:04:29,412][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 45.9s, Accuracy: 0.0104, Precision: 0.0028, Recall: 0.0104, F1-Score: 0.0008
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:05:13,914][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 44.22s, Accuracy: 0.1099, Precision: 0.0809, Recall: 0.1099, F1-Score: 0.0657
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:06:00,347][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 46.15s, Accuracy: 0.0787, Precision: 0.0486, Recall: 0.0787, F1-Score: 0.0383
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:06:44,907][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 44.26s, Accuracy: 0.0274, Precision: 0.0106, Recall: 0.0274, F1-Score: 0.0064
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:07:51,050][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 65.89s, Accuracy: 0.0195, Precision: 0.002, Recall: 0.0195, F1-Score: 0.0033
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:08:57,692][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 66.34s, Accuracy: 0.1332, Precision: 0.1142, Recall: 0.1332, F1-Score: 0.0886
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:10:07,542][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 69.56s, Accuracy: 0.1012, Precision: 0.0714, Recall: 0.1012, F1-Score: 0.0583
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 02:11:13,939][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 5411.27s, Training time: 66.12s, Accuracy: 0.0321, Precision: 0.0137, Recall: 0.0321, F1-Score: 0.0083
+[2024-12-22 02:12:15,415][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 61.18s, Accuracy: 0.232, Precision: 0.2359, Recall: 0.232, F1-Score: 0.2277
+[2024-12-22 02:13:17,745][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 62.03s, Accuracy: 0.2409, Precision: 0.2354, Recall: 0.2409, F1-Score: 0.2318
+[2024-12-22 02:14:21,511][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 63.47s, Accuracy: 0.2376, Precision: 0.232, Recall: 0.2376, F1-Score: 0.2273
+[2024-12-22 02:15:31,235][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 69.43s, Accuracy: 0.2284, Precision: 0.2223, Recall: 0.2284, F1-Score: 0.2155
+[2024-12-22 02:16:46,725][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 75.19s, Accuracy: 0.2217, Precision: 0.2154, Recall: 0.2217, F1-Score: 0.2073
+[2024-12-22 02:18:09,418][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 82.39s, Accuracy: 0.2164, Precision: 0.2102, Recall: 0.2164, F1-Score: 0.2008
+[2024-12-22 02:19:41,938][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 5411.27s, Training time: 92.22s, Accuracy: 0.2096, Precision: 0.2037, Recall: 0.2096, F1-Score: 0.1928
+/home/lgierz/.local/lib/python3.8/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:26:35,667][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 11.26s, Accuracy: 0.0068, Precision: 0.0001, Recall: 0.0068, F1-Score: 0.0002
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:26:46,867][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 10.92s, Accuracy: 0.0714, Precision: 0.0349, Recall: 0.0714, F1-Score: 0.0311
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:26:58,437][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 11.32s, Accuracy: 0.0407, Precision: 0.0188, Recall: 0.0407, F1-Score: 0.0113
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:27:09,507][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 10.87s, Accuracy: 0.0066, Precision: 0.0001, Recall: 0.0066, F1-Score: 0.0001
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:27:32,304][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 22.58s, Accuracy: 0.0203, Precision: 0.0043, Recall: 0.0203, F1-Score: 0.0061
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:27:54,563][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 21.99s, Accuracy: 0.0942, Precision: 0.0658, Recall: 0.0942, F1-Score: 0.0528
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:28:16,861][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 22.03s, Accuracy: 0.0591, Precision: 0.0298, Recall: 0.0591, F1-Score: 0.0236
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:28:40,151][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 23.04s, Accuracy: 0.0201, Precision: 0.0052, Recall: 0.0201, F1-Score: 0.006
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:29:13,177][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 32.8s, Accuracy: 0.0232, Precision: 0.0143, Recall: 0.0232, F1-Score: 0.0088
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:29:46,542][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 33.1s, Accuracy: 0.1039, Precision: 0.0755, Recall: 0.1039, F1-Score: 0.0622
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:30:19,961][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 33.14s, Accuracy: 0.0748, Precision: 0.0441, Recall: 0.0748, F1-Score: 0.0363
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:30:53,322][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 33.11s, Accuracy: 0.031, Precision: 0.0118, Recall: 0.031, F1-Score: 0.0083
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:31:39,529][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 45.98s, Accuracy: 0.0206, Precision: 0.0023, Recall: 0.0206, F1-Score: 0.0036
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:32:24,031][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 44.22s, Accuracy: 0.1125, Precision: 0.0846, Recall: 0.1125, F1-Score: 0.0703
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:33:08,554][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 44.25s, Accuracy: 0.0883, Precision: 0.0603, Recall: 0.0883, F1-Score: 0.0497
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:33:52,998][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 44.2s, Accuracy: 0.0255, Precision: 0.0086, Recall: 0.0255, F1-Score: 0.006
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:34:59,110][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 65.88s, Accuracy: 0.0228, Precision: 0.0086, Recall: 0.0228, F1-Score: 0.0065
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:36:05,677][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 66.3s, Accuracy: 0.1323, Precision: 0.1066, Recall: 0.1323, F1-Score: 0.0887
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:37:12,338][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 66.39s, Accuracy: 0.1043, Precision: 0.0739, Recall: 0.1043, F1-Score: 0.0597
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 04:38:18,903][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 7602.2s, Training time: 66.31s, Accuracy: 0.0354, Precision: 0.0172, Recall: 0.0354, F1-Score: 0.0107
+[2024-12-22 04:39:19,698][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 60.51s, Accuracy: 0.2289, Precision: 0.2305, Recall: 0.2289, F1-Score: 0.2235
+[2024-12-22 04:40:22,953][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 62.97s, Accuracy: 0.2384, Precision: 0.231, Recall: 0.2384, F1-Score: 0.2282
+[2024-12-22 04:41:26,817][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 63.58s, Accuracy: 0.2345, Precision: 0.2267, Recall: 0.2345, F1-Score: 0.223
+[2024-12-22 04:42:35,517][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 68.42s, Accuracy: 0.2247, Precision: 0.217, Recall: 0.2247, F1-Score: 0.2106
+[2024-12-22 04:43:51,079][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 75.28s, Accuracy: 0.2172, Precision: 0.2094, Recall: 0.2172, F1-Score: 0.2017
+[2024-12-22 04:45:14,342][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 82.98s, Accuracy: 0.2116, Precision: 0.2039, Recall: 0.2116, F1-Score: 0.1951
+[2024-12-22 04:46:46,814][INFO] - [UMAP ({'n_components': 128, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 7602.2s, Training time: 92.19s, Accuracy: 0.2049, Precision: 0.1967, Recall: 0.2049, F1-Score: 0.1872
+/home/lgierz/.local/lib/python3.8/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:06:16,597][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 16.32s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:06:33,211][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 16.41s, Accuracy: 0.0101, Precision: 0.0015, Recall: 0.0101, F1-Score: 0.0022
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:06:50,251][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 16.79s, Accuracy: 0.0455, Precision: 0.0166, Recall: 0.0455, F1-Score: 0.0144
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:07:07,370][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 16.88s, Accuracy: 0.0212, Precision: 0.0038, Recall: 0.0212, F1-Score: 0.0046
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:07:40,746][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 33.18s, Accuracy: 0.007, Precision: 0.0001, Recall: 0.007, F1-Score: 0.0001
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:08:14,503][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 33.55s, Accuracy: 0.0203, Precision: 0.0045, Recall: 0.0203, F1-Score: 0.0066
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:08:48,960][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 34.21s, Accuracy: 0.0604, Precision: 0.0263, Recall: 0.0604, F1-Score: 0.0225
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:09:23,229][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 34.02s, Accuracy: 0.0232, Precision: 0.0123, Recall: 0.0232, F1-Score: 0.0067
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:10:13,512][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 50.07s, Accuracy: 0.0097, Precision: 0.0001, Recall: 0.0097, F1-Score: 0.0003
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:11:04,418][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 50.64s, Accuracy: 0.0481, Precision: 0.0236, Recall: 0.0481, F1-Score: 0.0178
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:11:55,749][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 51.07s, Accuracy: 0.0709, Precision: 0.0393, Recall: 0.0709, F1-Score: 0.0306
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:12:46,997][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 51.0s, Accuracy: 0.0284, Precision: 0.0125, Recall: 0.0284, F1-Score: 0.0085
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:13:53,430][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 66.23s, Accuracy: 0.0065, Precision: 0.0, Recall: 0.0065, F1-Score: 0.0001
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:15:01,262][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 67.57s, Accuracy: 0.0689, Precision: 0.0368, Recall: 0.0689, F1-Score: 0.0287
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:16:09,981][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 68.44s, Accuracy: 0.0746, Precision: 0.0414, Recall: 0.0746, F1-Score: 0.0316
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:17:18,223][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 68.0s, Accuracy: 0.0316, Precision: 0.007, Recall: 0.0316, F1-Score: 0.007
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:18:57,636][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 99.19s, Accuracy: 0.0089, Precision: 0.0001, Recall: 0.0089, F1-Score: 0.0002
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:20:39,665][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 101.77s, Accuracy: 0.0703, Precision: 0.0387, Recall: 0.0703, F1-Score: 0.0337
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:22:21,767][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 101.84s, Accuracy: 0.09, Precision: 0.0631, Recall: 0.09, F1-Score: 0.0471
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 07:24:03,836][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 8353.21s, Training time: 101.8s, Accuracy: 0.0416, Precision: 0.0139, Recall: 0.0416, F1-Score: 0.0119
+[2024-12-22 07:27:41,541][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 217.42s, Accuracy: 0.2323, Precision: 0.2358, Recall: 0.2323, F1-Score: 0.2278
+[2024-12-22 07:31:21,775][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 219.95s, Accuracy: 0.2417, Precision: 0.2364, Recall: 0.2417, F1-Score: 0.2328
+[2024-12-22 07:35:03,428][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 221.37s, Accuracy: 0.239, Precision: 0.2333, Recall: 0.239, F1-Score: 0.2286
+[2024-12-22 07:38:51,395][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 227.69s, Accuracy: 0.229, Precision: 0.2236, Recall: 0.229, F1-Score: 0.2163
+[2024-12-22 07:42:46,823][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 235.14s, Accuracy: 0.2219, Precision: 0.2156, Recall: 0.2219, F1-Score: 0.2075
+[2024-12-22 07:46:50,861][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 243.76s, Accuracy: 0.2161, Precision: 0.2095, Recall: 0.2161, F1-Score: 0.2005
+[2024-12-22 07:51:03,859][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 8353.21s, Training time: 252.71s, Accuracy: 0.2096, Precision: 0.203, Recall: 0.2096, F1-Score: 0.1927
+/home/lgierz/.local/lib/python3.8/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 10:58:41,416][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 16.44s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 10:58:58,078][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 16.46s, Accuracy: 0.0066, Precision: 0.0001, Recall: 0.0066, F1-Score: 0.0001
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 10:59:15,112][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 16.78s, Accuracy: 0.0422, Precision: 0.0175, Recall: 0.0422, F1-Score: 0.0147
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 10:59:32,379][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 17.03s, Accuracy: 0.0179, Precision: 0.0048, Recall: 0.0179, F1-Score: 0.004
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:00:05,490][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 32.92s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:00:39,305][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 33.56s, Accuracy: 0.0457, Precision: 0.0244, Recall: 0.0457, F1-Score: 0.0167
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:01:13,737][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 34.18s, Accuracy: 0.0548, Precision: 0.0257, Recall: 0.0548, F1-Score: 0.0205
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:01:47,981][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 34.01s, Accuracy: 0.0207, Precision: 0.0063, Recall: 0.0207, F1-Score: 0.0051
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:02:38,267][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 50.09s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:03:29,158][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 50.64s, Accuracy: 0.0452, Precision: 0.0212, Recall: 0.0452, F1-Score: 0.0135
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:04:20,505][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 51.09s, Accuracy: 0.0767, Precision: 0.0463, Recall: 0.0767, F1-Score: 0.0353
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:05:11,840][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 51.1s, Accuracy: 0.0297, Precision: 0.0081, Recall: 0.0297, F1-Score: 0.0082
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:06:18,803][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 66.76s, Accuracy: 0.0088, Precision: 0.0002, Recall: 0.0088, F1-Score: 0.0004
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:07:26,619][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 67.56s, Accuracy: 0.0536, Precision: 0.0239, Recall: 0.0536, F1-Score: 0.0199
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:08:35,296][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 68.42s, Accuracy: 0.0805, Precision: 0.0544, Recall: 0.0805, F1-Score: 0.0407
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:09:43,555][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 68.01s, Accuracy: 0.0392, Precision: 0.0137, Recall: 0.0392, F1-Score: 0.0098
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:11:24,028][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 100.27s, Accuracy: 0.0131, Precision: 0.0011, Recall: 0.0131, F1-Score: 0.0019
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:13:06,383][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 102.09s, Accuracy: 0.0678, Precision: 0.0454, Recall: 0.0678, F1-Score: 0.0307
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:14:48,759][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 102.11s, Accuracy: 0.0925, Precision: 0.0666, Recall: 0.0925, F1-Score: 0.0527
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 11:16:31,009][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][Linear Classifier] Reduction time: 11240.88s, Training time: 102.0s, Accuracy: 0.0427, Precision: 0.0186, Recall: 0.0427, F1-Score: 0.0102
+[2024-12-22 11:20:11,107][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 219.79s, Accuracy: 0.2285, Precision: 0.2303, Recall: 0.2285, F1-Score: 0.2231
+[2024-12-22 11:23:52,243][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 220.85s, Accuracy: 0.2375, Precision: 0.2306, Recall: 0.2375, F1-Score: 0.2275
+[2024-12-22 11:27:33,993][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 221.47s, Accuracy: 0.2341, Precision: 0.2268, Recall: 0.2341, F1-Score: 0.2227
+[2024-12-22 11:31:22,659][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 228.39s, Accuracy: 0.2236, Precision: 0.2161, Recall: 0.2236, F1-Score: 0.2098
+[2024-12-22 11:35:18,251][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 235.31s, Accuracy: 0.217, Precision: 0.2088, Recall: 0.217, F1-Score: 0.2016
+[2024-12-22 11:39:21,809][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 243.28s, Accuracy: 0.2112, Precision: 0.203, Recall: 0.2112, F1-Score: 0.1947
+[2024-12-22 11:43:35,686][INFO] - [UMAP ({'n_components': 512, 'n_neighbors': 100, 'random_state': 42})][KNN] Reduction time: 11240.88s, Training time: 253.6s, Accuracy: 0.2045, Precision: 0.1963, Recall: 0.2045, F1-Score: 0.1867
+/home/lgierz/.local/lib/python3.8/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:55:21,799][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 23.66s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:55:46,004][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 24.02s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:56:11,668][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 25.41s, Accuracy: 0.037, Precision: 0.0139, Recall: 0.037, F1-Score: 0.0091
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:56:37,584][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 25.69s, Accuracy: 0.0092, Precision: 0.0025, Recall: 0.0092, F1-Score: 0.0009
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:57:26,297][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 48.53s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:58:15,838][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 49.33s, Accuracy: 0.0075, Precision: 0.0013, Recall: 0.0075, F1-Score: 0.0002
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:59:06,798][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 50.71s, Accuracy: 0.0416, Precision: 0.0193, Recall: 0.0416, F1-Score: 0.0135
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 15:59:57,695][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 50.66s, Accuracy: 0.0247, Precision: 0.0157, Recall: 0.0247, F1-Score: 0.0081
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:01:11,085][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 73.19s, Accuracy: 0.0092, Precision: 0.0022, Recall: 0.0092, F1-Score: 0.0023
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:02:25,840][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 74.55s, Accuracy: 0.0176, Precision: 0.0026, Recall: 0.0176, F1-Score: 0.004
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:03:42,061][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 75.97s, Accuracy: 0.0569, Precision: 0.0327, Recall: 0.0569, F1-Score: 0.021
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:04:57,970][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 75.67s, Accuracy: 0.0318, Precision: 0.0099, Recall: 0.0318, F1-Score: 0.0093
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:06:35,516][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 97.35s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:08:15,284][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 99.54s, Accuracy: 0.0249, Precision: 0.0115, Recall: 0.0249, F1-Score: 0.009
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:09:56,684][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 101.15s, Accuracy: 0.0581, Precision: 0.0284, Recall: 0.0581, F1-Score: 0.0201
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:11:37,801][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 100.87s, Accuracy: 0.0397, Precision: 0.0147, Recall: 0.0397, F1-Score: 0.0135
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:14:03,639][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 145.65s, Accuracy: 0.0036, Precision: 0.0, Recall: 0.0036, F1-Score: 0.0
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:16:33,463][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 149.56s, Accuracy: 0.0662, Precision: 0.0349, Recall: 0.0662, F1-Score: 0.0303
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:19:05,647][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 151.92s, Accuracy: 0.0755, Precision: 0.0465, Recall: 0.0755, F1-Score: 0.0356
+/home/lgierz/.local/lib/python3.8/site-packages/sklearn/metrics/_classification.py:1471: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, msg_start, len(result))
+[2024-12-22 16:21:37,047][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][Linear Classifier] Reduction time: 15082.22s, Training time: 151.15s, Accuracy: 0.0535, Precision: 0.0227, Recall: 0.0535, F1-Score: 0.0201
+[2024-12-22 16:28:49,365][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 432.03s, Accuracy: 0.2319, Precision: 0.235, Recall: 0.2319, F1-Score: 0.2274
+[2024-12-22 16:36:10,564][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 440.92s, Accuracy: 0.2408, Precision: 0.2356, Recall: 0.2408, F1-Score: 0.2319
+[2024-12-22 16:43:29,629][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 438.78s, Accuracy: 0.2385, Precision: 0.2325, Recall: 0.2385, F1-Score: 0.2281
+[2024-12-22 16:51:01,086][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 451.18s, Accuracy: 0.2283, Precision: 0.2223, Recall: 0.2283, F1-Score: 0.2155
+[2024-12-22 16:58:41,325][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 459.96s, Accuracy: 0.2211, Precision: 0.2149, Recall: 0.2211, F1-Score: 0.207
+[2024-12-22 17:06:29,918][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 468.31s, Accuracy: 0.2152, Precision: 0.2088, Recall: 0.2152, F1-Score: 0.1999
+[2024-12-22 17:14:29,735][INFO] - [UMAP ({'n_components': 1024, 'n_neighbors': 50, 'random_state': 42})][KNN] Reduction time: 15082.22s, Training time: 479.54s, Accuracy: 0.2091, Precision: 0.2037, Recall: 0.2091, F1-Score: 0.1926

@@ -1,5 +1,4 @@
 from torchvision import transforms
-import time
 import torch
 from torch.utils.data import Dataset
 
@@ -18,14 +17,21 @@ logging.basicConfig(
     format='[%(asctime)s][%(levelname)s] - %(message)s',
 )
 
+def get_labelencoding(df):
+    species_list = sorted(df['scientificName'].unique())
+    species_dict = {species: idx for idx, species in enumerate(species_list)}
+    return species_dict
+
+
 class LepidopteraDataset(Dataset):
     def __init__(self, csv_file, root_dir, transform):
         #self.data_frame = pd.read_csv(csv_file)[['gbifID', 'scientificName']]
         self.data_frame = csv_file
         self.root_dir = root_dir
         self.transform = transform
-        self.label_encoder = LabelEncoder()
-        self.data_frame['scientificName_encoded'] = self.label_encoder.fit_transform(self.data_frame['scientificName'])
+        #self.label_encoder = LabelEncoder()
+        self.mapping = get_labelencoding(csv_file)
+        #self.data_frame['scientificName_encoded'] = self.label_encoder.fit_transform(self.data_frame['scientificName'])
 
         # Build an in-memory index mapping gbifID to file paths
         self.index = {}
@@ -42,7 +48,8 @@ class LepidopteraDataset(Dataset):
         #_st = pc()
         gbifid = self.data_frame.loc[idx, 'gbifID']
         img_path = self.index[str(gbifid)]  # Select the first matching file from the index
-        label = self.data_frame.loc[idx, 'scientificName_encoded']
+        label_name = self.data_frame.loc[idx, 'scientificName']
+        label = self.mapping[label_name]
 
         try: 
             with Image.open(img_path) as img:  # use OpenCV for faster operations
@@ -63,3 +70,5 @@ class LepidopteraDataset(Dataset):
     def decode_label(self, encoded_label):
         '''Helper Function to display the type of moth, reversing label encoder.'''
         return self.label_encoder.inverse_transform([encoded_label])[0]
+
+
