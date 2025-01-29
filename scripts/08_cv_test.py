@@ -160,7 +160,7 @@ for fm in FOUNDATIONAL_MODEL_NAMES:
                                 losses, accuracies = [], []
 
                                 # PyTorch Model Setup
-                                input_dim = X_train.shape[1]
+                                input_dim = X_train.shape[1] # TODO: learning rate schedulinng!!
 
                                 start_time = pc()
 
@@ -246,12 +246,14 @@ for fm in FOUNDATIONAL_MODEL_NAMES:
                             logging.info(f'[FOLD {fold}] Shapes: {X_train.shape} (X training) | {X_test.shape} (X testing) | {y_train.shape} (y training) | {y_test.shape} (y testing)')
 
 
-                            start_time = pc()
+                            start_time = pc() 
 
                             model = KNeighborsClassifier(n_neighbors=neighbors)
                             model.fit(X_train, y_train)
-                            y_pred_numpy = model.predict(X_test)
-                            training_time = pc() - start_time
+                            y_pred_numpy = model.predict(X_test)# predictions hohe confidance?, gehören nachbarn zur gleichen klasse?
+                            # Sicherheit herausfinden, wie hoch ist die confidance für einzelne samples und für die verschiedenen klassen
+                            # wie hoch ist die confidance, funktion herausfinden (sklearn), umd die confidance von einzelnen samples herauszufinden
+                            training_time = pc() - start_time 
 
                             fold_results.append({
                                 "Model": model_name,
