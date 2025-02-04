@@ -1,0 +1,325 @@
+nohup: ignoring input
+[2025-01-30 10:02:25,345][INFO] - [277 Species][3000 Samples][resnet][Linear Classifier] Training time: 103.69s, Accuracy: 0.7031, Precision: 0.7023, Recall: 0.7031, F1-Score: 0.702
+[2025-01-30 10:10:11,469][INFO] - [277 Species][3000 Samples][resnet][KNN] Training time: 463.32s, Accuracy: 0.4598, Precision: 0.4737, Recall: 0.4598, F1-Score: 0.4557
+[2025-01-30 10:12:37,158][INFO] - [277 Species][2000 Samples][resnet][Linear Classifier] Training time: 65.94s, Accuracy: 0.6981, Precision: 0.6972, Recall: 0.6981, F1-Score: 0.697
+[2025-01-30 10:16:04,517][INFO] - [277 Species][2000 Samples][resnet][KNN] Training time: 205.49s, Accuracy: 0.4398, Precision: 0.4542, Recall: 0.4398, F1-Score: 0.4351
+[2025-01-30 10:17:17,039][INFO] - [277 Species][1000 Samples][resnet][Linear Classifier] Training time: 31.94s, Accuracy: 0.6772, Precision: 0.6765, Recall: 0.6772, F1-Score: 0.6761
+[2025-01-30 10:18:08,437][INFO] - [277 Species][1000 Samples][resnet][KNN] Training time: 50.28s, Accuracy: 0.4067, Precision: 0.4244, Recall: 0.4067, F1-Score: 0.402
+[2025-01-30 10:18:44,076][INFO] - [277 Species][500 Samples][resnet][Linear Classifier] Training time: 16.17s, Accuracy: 0.637, Precision: 0.6386, Recall: 0.637, F1-Score: 0.6365
+[2025-01-30 10:18:57,585][INFO] - [277 Species][500 Samples][resnet][KNN] Training time: 13.0s, Accuracy: 0.371, Precision: 0.3937, Recall: 0.371, F1-Score: 0.3657
+[2025-01-30 10:22:24,483][INFO] - [387 Species][2000 Samples][resnet][Linear Classifier] Training time: 116.33s, Accuracy: 0.6677, Precision: 0.6668, Recall: 0.6677, F1-Score: 0.6665
+[2025-01-30 10:29:06,576][INFO] - [387 Species][2000 Samples][resnet][KNN] Training time: 398.81s, Accuracy: 0.4074, Precision: 0.4229, Recall: 0.4074, F1-Score: 0.4026
+[2025-01-30 10:31:00,259][INFO] - [387 Species][1000 Samples][resnet][Linear Classifier] Training time: 56.08s, Accuracy: 0.6488, Precision: 0.6488, Recall: 0.6488, F1-Score: 0.6479
+[2025-01-30 10:32:42,164][INFO] - [387 Species][1000 Samples][resnet][KNN] Training time: 100.17s, Accuracy: 0.3768, Precision: 0.3937, Recall: 0.3768, F1-Score: 0.3715
+[2025-01-30 10:33:37,296][INFO] - [387 Species][500 Samples][resnet][Linear Classifier] Training time: 27.41s, Accuracy: 0.6066, Precision: 0.6074, Recall: 0.6066, F1-Score: 0.6057
+[2025-01-30 10:34:03,061][INFO] - [387 Species][500 Samples][resnet][KNN] Training time: 24.81s, Accuracy: 0.3387, Precision: 0.3579, Recall: 0.3387, F1-Score: 0.3328
+[2025-01-30 10:37:05,736][INFO] - [589 Species][1000 Samples][resnet][Linear Classifier] Training time: 112.66s, Accuracy: 0.6154, Precision: 0.6152, Recall: 0.6154, F1-Score: 0.6142
+[2025-01-30 10:40:58,518][INFO] - [589 Species][1000 Samples][resnet][KNN] Training time: 228.85s, Accuracy: 0.3388, Precision: 0.3607, Recall: 0.3388, F1-Score: 0.3353
+[2025-01-30 10:42:38,461][INFO] - [589 Species][500 Samples][resnet][Linear Classifier] Training time: 54.85s, Accuracy: 0.5775, Precision: 0.5795, Recall: 0.5775, F1-Score: 0.5771
+[2025-01-30 10:43:38,023][INFO] - [589 Species][500 Samples][resnet][KNN] Training time: 57.64s, Accuracy: 0.3005, Precision: 0.3261, Recall: 0.3005, F1-Score: 0.2963
+[2025-01-30 10:46:54,644][INFO] - [277 Species][3000 Samples][dino][Linear Classifier] Training time: 102.27s, Accuracy: 0.9286, Precision: 0.9288, Recall: 0.9286, F1-Score: 0.9286
+[2025-01-30 10:54:35,935][INFO] - [277 Species][3000 Samples][dino][KNN] Training time: 458.68s, Accuracy: 0.7502, Precision: 0.7565, Recall: 0.7502, F1-Score: 0.7499
+[2025-01-30 10:56:54,085][INFO] - [277 Species][2000 Samples][dino][Linear Classifier] Training time: 65.42s, Accuracy: 0.9222, Precision: 0.9226, Recall: 0.9222, F1-Score: 0.9223
+[2025-01-30 11:00:20,027][INFO] - [277 Species][2000 Samples][dino][KNN] Training time: 204.14s, Accuracy: 0.7342, Precision: 0.7419, Recall: 0.7342, F1-Score: 0.7338
+[2025-01-30 11:01:27,961][INFO] - [277 Species][1000 Samples][dino][Linear Classifier] Training time: 31.96s, Accuracy: 0.9086, Precision: 0.9099, Recall: 0.9086, F1-Score: 0.9089
+[2025-01-30 11:02:20,030][INFO] - [277 Species][1000 Samples][dino][KNN] Training time: 51.1s, Accuracy: 0.7052, Precision: 0.7147, Recall: 0.7052, F1-Score: 0.7041
+[2025-01-30 11:02:54,759][INFO] - [277 Species][500 Samples][dino][Linear Classifier] Training time: 16.31s, Accuracy: 0.8849, Precision: 0.8886, Recall: 0.8849, F1-Score: 0.886
+[2025-01-30 11:03:08,632][INFO] - [277 Species][500 Samples][dino][KNN] Training time: 13.29s, Accuracy: 0.6677, Precision: 0.6804, Recall: 0.6677, F1-Score: 0.6668
+[2025-01-30 11:07:07,602][INFO] - [387 Species][2000 Samples][dino][Linear Classifier] Training time: 115.8s, Accuracy: 0.9112, Precision: 0.9115, Recall: 0.9112, F1-Score: 0.9113
+[2025-01-30 11:13:50,895][INFO] - [387 Species][2000 Samples][dino][KNN] Training time: 399.95s, Accuracy: 0.7116, Precision: 0.7202, Recall: 0.7116, F1-Score: 0.7113
+[2025-01-30 11:15:41,566][INFO] - [387 Species][1000 Samples][dino][Linear Classifier] Training time: 56.38s, Accuracy: 0.898, Precision: 0.8993, Recall: 0.898, F1-Score: 0.8984
+[2025-01-30 11:17:21,880][INFO] - [387 Species][1000 Samples][dino][KNN] Training time: 98.44s, Accuracy: 0.6798, Precision: 0.6901, Recall: 0.6798, F1-Score: 0.679
+[2025-01-30 11:18:15,271][INFO] - [387 Species][500 Samples][dino][Linear Classifier] Training time: 27.41s, Accuracy: 0.8742, Precision: 0.8777, Recall: 0.8742, F1-Score: 0.8753
+[2025-01-30 11:18:40,529][INFO] - [387 Species][500 Samples][dino][KNN] Training time: 24.35s, Accuracy: 0.6379, Precision: 0.6527, Recall: 0.6379, F1-Score: 0.6367
+[2025-01-30 11:21:35,247][INFO] - [589 Species][1000 Samples][dino][Linear Classifier] Training time: 112.82s, Accuracy: 0.8856, Precision: 0.8871, Recall: 0.8856, F1-Score: 0.8861
+[2025-01-30 11:25:30,168][INFO] - [589 Species][1000 Samples][dino][KNN] Training time: 230.97s, Accuracy: 0.654, Precision: 0.6696, Recall: 0.654, F1-Score: 0.6544
+[2025-01-30 11:27:07,306][INFO] - [589 Species][500 Samples][dino][Linear Classifier] Training time: 54.9s, Accuracy: 0.8639, Precision: 0.8674, Recall: 0.8639, F1-Score: 0.865
+[2025-01-30 11:28:06,702][INFO] - [589 Species][500 Samples][dino][KNN] Training time: 57.48s, Accuracy: 0.6167, Precision: 0.6348, Recall: 0.6167, F1-Score: 0.6168
+Processing resnet dataset with 277 classes and 3000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max3000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max3000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (664696, 2048), X_test shape: (166174, 2048), y_train shape: (664696,), y_test shape: (166174,), gbifids_train shape: (664696,), gbifids_test shape: (166174,)
+SHAPES: normal train: (664696, 2048) | reduced train: (664696, 512)
+SHAPES: normal test: (166174, 2048) | reduced test: (166174, 512)
+Input Dimension:  512
+
+y_test: 166174, y_pred: 166174, confidences: 166174
+y_test: (166174,), y_pred: (166174,), confidences: (166174, 277)
+predictions_max277top3000_resnet_Linear Classifier.npz saved
+
+y_test: 166174, y_pred: 166174, confidences: 166174
+y_test: (166174,), y_pred: (166174,), confidences: (166174, 277)
+predictions_max277top3000_resnet_KNN.npz saved
+Processing resnet dataset with 277 classes and 2000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max2000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max2000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (443200, 2048), X_test shape: (110800, 2048), y_train shape: (443200,), y_test shape: (110800,), gbifids_train shape: (443200,), gbifids_test shape: (110800,)
+SHAPES: normal train: (443200, 2048) | reduced train: (443200, 512)
+SHAPES: normal test: (110800, 2048) | reduced test: (110800, 512)
+Input Dimension:  512
+
+y_test: 110800, y_pred: 110800, confidences: 110800
+y_test: (110800,), y_pred: (110800,), confidences: (110800, 277)
+predictions_max277top2000_resnet_Linear Classifier.npz saved
+
+y_test: 110800, y_pred: 110800, confidences: 110800
+y_test: (110800,), y_pred: (110800,), confidences: (110800, 277)
+predictions_max277top2000_resnet_KNN.npz saved
+Processing resnet dataset with 277 classes and 1000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max1000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max1000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (221600, 2048), X_test shape: (55400, 2048), y_train shape: (221600,), y_test shape: (55400,), gbifids_train shape: (221600,), gbifids_test shape: (55400,)
+SHAPES: normal train: (221600, 2048) | reduced train: (221600, 512)
+SHAPES: normal test: (55400, 2048) | reduced test: (55400, 512)
+Input Dimension:  512
+
+y_test: 55400, y_pred: 55400, confidences: 55400
+y_test: (55400,), y_pred: (55400,), confidences: (55400, 277)
+predictions_max277top1000_resnet_Linear Classifier.npz saved
+
+y_test: 55400, y_pred: 55400, confidences: 55400
+y_test: (55400,), y_pred: (55400,), confidences: (55400, 277)
+predictions_max277top1000_resnet_KNN.npz saved
+Processing resnet dataset with 277 classes and 500 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max500_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top277_max500_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (110800, 2048), X_test shape: (27700, 2048), y_train shape: (110800,), y_test shape: (27700,), gbifids_train shape: (110800,), gbifids_test shape: (27700,)
+SHAPES: normal train: (110800, 2048) | reduced train: (110800, 512)
+SHAPES: normal test: (27700, 2048) | reduced test: (27700, 512)
+Input Dimension:  512
+
+y_test: 27700, y_pred: 27700, confidences: 27700
+y_test: (27700,), y_pred: (27700,), confidences: (27700, 277)
+predictions_max277top500_resnet_Linear Classifier.npz saved
+
+y_test: 27700, y_pred: 27700, confidences: 27700
+y_test: (27700,), y_pred: (27700,), confidences: (27700, 277)
+predictions_max277top500_resnet_KNN.npz saved
+Processing resnet dataset with 387 classes and 2000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top387_max2000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top387_max2000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 387, unique labels in testing ds: 387
+X_train shape: (619200, 2048), X_test shape: (154800, 2048), y_train shape: (619200,), y_test shape: (154800,), gbifids_train shape: (619200,), gbifids_test shape: (154800,)
+SHAPES: normal train: (619200, 2048) | reduced train: (619200, 512)
+SHAPES: normal test: (154800, 2048) | reduced test: (154800, 512)
+Input Dimension:  512
+
+y_test: 154800, y_pred: 154800, confidences: 154800
+y_test: (154800,), y_pred: (154800,), confidences: (154800, 387)
+predictions_max387top2000_resnet_Linear Classifier.npz saved
+
+y_test: 154800, y_pred: 154800, confidences: 154800
+y_test: (154800,), y_pred: (154800,), confidences: (154800, 387)
+predictions_max387top2000_resnet_KNN.npz saved
+Processing resnet dataset with 387 classes and 1000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top387_max1000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top387_max1000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 387, unique labels in testing ds: 387
+X_train shape: (309600, 2048), X_test shape: (77400, 2048), y_train shape: (309600,), y_test shape: (77400,), gbifids_train shape: (309600,), gbifids_test shape: (77400,)
+SHAPES: normal train: (309600, 2048) | reduced train: (309600, 512)
+SHAPES: normal test: (77400, 2048) | reduced test: (77400, 512)
+Input Dimension:  512
+
+y_test: 77400, y_pred: 77400, confidences: 77400
+y_test: (77400,), y_pred: (77400,), confidences: (77400, 387)
+predictions_max387top1000_resnet_Linear Classifier.npz saved
+
+y_test: 77400, y_pred: 77400, confidences: 77400
+y_test: (77400,), y_pred: (77400,), confidences: (77400, 387)
+predictions_max387top1000_resnet_KNN.npz saved
+Processing resnet dataset with 387 classes and 500 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top387_max500_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top387_max500_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 387, unique labels in testing ds: 387
+X_train shape: (154800, 2048), X_test shape: (38700, 2048), y_train shape: (154800,), y_test shape: (38700,), gbifids_train shape: (154800,), gbifids_test shape: (38700,)
+SHAPES: normal train: (154800, 2048) | reduced train: (154800, 512)
+SHAPES: normal test: (38700, 2048) | reduced test: (38700, 512)
+Input Dimension:  512
+
+y_test: 38700, y_pred: 38700, confidences: 38700
+y_test: (38700,), y_pred: (38700,), confidences: (38700, 387)
+predictions_max387top500_resnet_Linear Classifier.npz saved
+
+y_test: 38700, y_pred: 38700, confidences: 38700
+y_test: (38700,), y_pred: (38700,), confidences: (38700, 387)
+predictions_max387top500_resnet_KNN.npz saved
+Processing resnet dataset with 589 classes and 1000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top589_max1000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top589_max1000_test.npz
+Lowest label: 0, highest label: 588, unique labels in training ds: 589, unique labels in testing ds: 589
+X_train shape: (471199, 2048), X_test shape: (117800, 2048), y_train shape: (471199,), y_test shape: (117800,), gbifids_train shape: (471199,), gbifids_test shape: (117800,)
+SHAPES: normal train: (471199, 2048) | reduced train: (471199, 512)
+SHAPES: normal test: (117800, 2048) | reduced test: (117800, 512)
+Input Dimension:  512
+
+y_test: 117800, y_pred: 117800, confidences: 117800
+y_test: (117800,), y_pred: (117800,), confidences: (117800, 589)
+predictions_max589top1000_resnet_Linear Classifier.npz saved
+
+y_test: 117800, y_pred: 117800, confidences: 117800
+y_test: (117800,), y_pred: (117800,), confidences: (117800, 589)
+predictions_max589top1000_resnet_KNN.npz saved
+Processing resnet dataset with 589 classes and 500 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top589_max500_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/resnet_feature_dataset_top589_max500_test.npz
+Lowest label: 0, highest label: 588, unique labels in training ds: 589, unique labels in testing ds: 589
+X_train shape: (235600, 2048), X_test shape: (58900, 2048), y_train shape: (235600,), y_test shape: (58900,), gbifids_train shape: (235600,), gbifids_test shape: (58900,)
+SHAPES: normal train: (235600, 2048) | reduced train: (235600, 512)
+SHAPES: normal test: (58900, 2048) | reduced test: (58900, 512)
+Input Dimension:  512
+
+y_test: 58900, y_pred: 58900, confidences: 58900
+y_test: (58900,), y_pred: (58900,), confidences: (58900, 589)
+predictions_max589top500_resnet_Linear Classifier.npz saved
+
+y_test: 58900, y_pred: 58900, confidences: 58900
+y_test: (58900,), y_pred: (58900,), confidences: (58900, 589)
+predictions_max589top500_resnet_KNN.npz saved
+Processing dino dataset with 277 classes and 3000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max3000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max3000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (664696, 1536), X_test shape: (166174, 1536), y_train shape: (664696,), y_test shape: (166174,), gbifids_train shape: (664696,), gbifids_test shape: (166174,)
+SHAPES: normal train: (664696, 1536) | reduced train: (664696, 512)
+SHAPES: normal test: (166174, 1536) | reduced test: (166174, 512)
+Input Dimension:  512
+
+y_test: 166174, y_pred: 166174, confidences: 166174
+y_test: (166174,), y_pred: (166174,), confidences: (166174, 277)
+predictions_max277top3000_dino_Linear Classifier.npz saved
+
+y_test: 166174, y_pred: 166174, confidences: 166174
+y_test: (166174,), y_pred: (166174,), confidences: (166174, 277)
+predictions_max277top3000_dino_KNN.npz saved
+Processing dino dataset with 277 classes and 2000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max2000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max2000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (443200, 1536), X_test shape: (110800, 1536), y_train shape: (443200,), y_test shape: (110800,), gbifids_train shape: (443200,), gbifids_test shape: (110800,)
+SHAPES: normal train: (443200, 1536) | reduced train: (443200, 512)
+SHAPES: normal test: (110800, 1536) | reduced test: (110800, 512)
+Input Dimension:  512
+
+y_test: 110800, y_pred: 110800, confidences: 110800
+y_test: (110800,), y_pred: (110800,), confidences: (110800, 277)
+predictions_max277top2000_dino_Linear Classifier.npz saved
+
+y_test: 110800, y_pred: 110800, confidences: 110800
+y_test: (110800,), y_pred: (110800,), confidences: (110800, 277)
+predictions_max277top2000_dino_KNN.npz saved
+Processing dino dataset with 277 classes and 1000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max1000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max1000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (221600, 1536), X_test shape: (55400, 1536), y_train shape: (221600,), y_test shape: (55400,), gbifids_train shape: (221600,), gbifids_test shape: (55400,)
+SHAPES: normal train: (221600, 1536) | reduced train: (221600, 512)
+SHAPES: normal test: (55400, 1536) | reduced test: (55400, 512)
+Input Dimension:  512
+
+y_test: 55400, y_pred: 55400, confidences: 55400
+y_test: (55400,), y_pred: (55400,), confidences: (55400, 277)
+predictions_max277top1000_dino_Linear Classifier.npz saved
+
+y_test: 55400, y_pred: 55400, confidences: 55400
+y_test: (55400,), y_pred: (55400,), confidences: (55400, 277)
+predictions_max277top1000_dino_KNN.npz saved
+Processing dino dataset with 277 classes and 500 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max500_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top277_max500_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 277, unique labels in testing ds: 277
+X_train shape: (110800, 1536), X_test shape: (27700, 1536), y_train shape: (110800,), y_test shape: (27700,), gbifids_train shape: (110800,), gbifids_test shape: (27700,)
+SHAPES: normal train: (110800, 1536) | reduced train: (110800, 512)
+SHAPES: normal test: (27700, 1536) | reduced test: (27700, 512)
+Input Dimension:  512
+
+y_test: 27700, y_pred: 27700, confidences: 27700
+y_test: (27700,), y_pred: (27700,), confidences: (27700, 277)
+predictions_max277top500_dino_Linear Classifier.npz saved
+
+y_test: 27700, y_pred: 27700, confidences: 27700
+y_test: (27700,), y_pred: (27700,), confidences: (27700, 277)
+predictions_max277top500_dino_KNN.npz saved
+Processing dino dataset with 387 classes and 2000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top387_max2000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top387_max2000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 387, unique labels in testing ds: 387
+X_train shape: (619200, 1536), X_test shape: (154800, 1536), y_train shape: (619200,), y_test shape: (154800,), gbifids_train shape: (619200,), gbifids_test shape: (154800,)
+SHAPES: normal train: (619200, 1536) | reduced train: (619200, 512)
+SHAPES: normal test: (154800, 1536) | reduced test: (154800, 512)
+Input Dimension:  512
+
+y_test: 154800, y_pred: 154800, confidences: 154800
+y_test: (154800,), y_pred: (154800,), confidences: (154800, 387)
+predictions_max387top2000_dino_Linear Classifier.npz saved
+
+y_test: 154800, y_pred: 154800, confidences: 154800
+y_test: (154800,), y_pred: (154800,), confidences: (154800, 387)
+predictions_max387top2000_dino_KNN.npz saved
+Processing dino dataset with 387 classes and 1000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top387_max1000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top387_max1000_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 387, unique labels in testing ds: 387
+X_train shape: (309600, 1536), X_test shape: (77400, 1536), y_train shape: (309600,), y_test shape: (77400,), gbifids_train shape: (309600,), gbifids_test shape: (77400,)
+SHAPES: normal train: (309600, 1536) | reduced train: (309600, 512)
+SHAPES: normal test: (77400, 1536) | reduced test: (77400, 512)
+Input Dimension:  512
+
+y_test: 77400, y_pred: 77400, confidences: 77400
+y_test: (77400,), y_pred: (77400,), confidences: (77400, 387)
+predictions_max387top1000_dino_Linear Classifier.npz saved
+
+y_test: 77400, y_pred: 77400, confidences: 77400
+y_test: (77400,), y_pred: (77400,), confidences: (77400, 387)
+predictions_max387top1000_dino_KNN.npz saved
+Processing dino dataset with 387 classes and 500 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top387_max500_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top387_max500_test.npz
+Lowest label: 2, highest label: 588, unique labels in training ds: 387, unique labels in testing ds: 387
+X_train shape: (154800, 1536), X_test shape: (38700, 1536), y_train shape: (154800,), y_test shape: (38700,), gbifids_train shape: (154800,), gbifids_test shape: (38700,)
+SHAPES: normal train: (154800, 1536) | reduced train: (154800, 512)
+SHAPES: normal test: (38700, 1536) | reduced test: (38700, 512)
+Input Dimension:  512
+
+y_test: 38700, y_pred: 38700, confidences: 38700
+y_test: (38700,), y_pred: (38700,), confidences: (38700, 387)
+predictions_max387top500_dino_Linear Classifier.npz saved
+
+y_test: 38700, y_pred: 38700, confidences: 38700
+y_test: (38700,), y_pred: (38700,), confidences: (38700, 387)
+predictions_max387top500_dino_KNN.npz saved
+Processing dino dataset with 589 classes and 1000 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top589_max1000_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top589_max1000_test.npz
+Lowest label: 0, highest label: 588, unique labels in training ds: 589, unique labels in testing ds: 589
+X_train shape: (471199, 1536), X_test shape: (117800, 1536), y_train shape: (471199,), y_test shape: (117800,), gbifids_train shape: (471199,), gbifids_test shape: (117800,)
+SHAPES: normal train: (471199, 1536) | reduced train: (471199, 512)
+SHAPES: normal test: (117800, 1536) | reduced test: (117800, 512)
+Input Dimension:  512
+
+y_test: 117800, y_pred: 117800, confidences: 117800
+y_test: (117800,), y_pred: (117800,), confidences: (117800, 589)
+predictions_max589top1000_dino_Linear Classifier.npz saved
+
+y_test: 117800, y_pred: 117800, confidences: 117800
+y_test: (117800,), y_pred: (117800,), confidences: (117800, 589)
+predictions_max589top1000_dino_KNN.npz saved
+Processing dino dataset with 589 classes and 500 samples
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top589_max500_train.npz
+Features and labels loaded from /home/lgierz/BA_MothClassification/data/confidance_analysis/split_datasets/dino_feature_dataset_top589_max500_test.npz
+Lowest label: 0, highest label: 588, unique labels in training ds: 589, unique labels in testing ds: 589
+X_train shape: (235600, 1536), X_test shape: (58900, 1536), y_train shape: (235600,), y_test shape: (58900,), gbifids_train shape: (235600,), gbifids_test shape: (58900,)
+SHAPES: normal train: (235600, 1536) | reduced train: (235600, 512)
+SHAPES: normal test: (58900, 1536) | reduced test: (58900, 512)
+Input Dimension:  512
+
+y_test: 58900, y_pred: 58900, confidences: 58900
+y_test: (58900,), y_pred: (58900,), confidences: (58900, 589)
+predictions_max589top500_dino_Linear Classifier.npz saved
+
+y_test: 58900, y_pred: 58900, confidences: 58900
+y_test: (58900,), y_pred: (58900,), confidences: (58900, 589)
+predictions_max589top500_dino_KNN.npz saved
