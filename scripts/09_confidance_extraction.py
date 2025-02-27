@@ -19,24 +19,31 @@ from utils_helpers import check_folder_exists, load_features, save_features
 
 
 PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/'
-PATH_TO_CA = PATH_TO_DATA + 'confidance_analysis/'
+PATH_TO_CA = PATH_TO_DATA + 'confidence_analysis/'
 PATH_TO_DATASETS = PATH_TO_DATA + 'processed/cv_datasets/'
-PATH_TO_LOGFILE = PATH_TO_DATA + 'status/confidance_tests1.log'
-csv_file_path = PATH_TO_DATA + 'status/confidance_tests1.csv'
+PATH_TO_LOGFILE = PATH_TO_DATA + 'status/confidence_tests2.log'
+csv_file_path = PATH_TO_DATA + 'status/confidence_tests2.csv'
 
 model_names = ["Linear Classifier", "KNN"]
 fm_names = ['ResNet', 'DINO']
 
 
-config = {    
+config_dino = {    
     'pca__reduced_fe_size': 512,
 
     'knn__neighbors': 35,
 
+    'linear__learning_rate': 0.0005,
+    'linear__epochs': 1500,
+}
+
+config_resnet = {    
+    'pca__reduced_fe_size': 512,
+
+    'knn__neighbors': 50,
+
     'linear__learning_rate': 0.001,
     'linear__epochs': 1500,
-    'linear__patience': 3,
-    'linear__gamma': 0.8
 }
 
 dataset_configs = {
@@ -59,7 +66,7 @@ logger = logging.getLogger()
 logger.addHandler(console_handler)
 
 
-def handle_results(csv_path, test, pred, species, samples, fm, model, training_time, neighbors=None, lr=None, epochs=None, losses=None, accuracies=None, gamma=None, patience=None, confidences=None, gbifids=None):
+def handle_results(csv_path, test, pred, species, samples, fm, model, training_time, neighbors=None, lr=None, epochs=None, losses=None, accuracies=None, confidences=None, gbifids=None):
     acc = accuracy_score(test, pred)
     prec = precision_score(test, pred, average='weighted')
     rec = recall_score(test, pred, average='weighted')
@@ -79,8 +86,6 @@ def handle_results(csv_path, test, pred, species, samples, fm, model, training_t
         "Neighbors": neighbors if model == 'KNN' else None,
         "Learning Rate": lr if model == "Linear Classifier" else None,
         "Epochs": epochs if model == "Linear Classifier" else None,
-        "Gamma": gamma if model == "Linear Classifier" else None,
-        "Patience": patience if model == "Linear Classifier" else None,
         "Epoch Losses": losses if model == "Linear Classifier" else None,
         "Epoch Accuracies": accuracies if model == "Linear Classifier" else None,
     }
@@ -100,12 +105,15 @@ def handle_results(csv_path, test, pred, species, samples, fm, model, training_t
 
 for fm in fm_names:
     fm = fm.lower()
+    config = config_dino if fm == 'dino' else config_resnet
 
     # Iterate through dataset configurations
     for dataset_name, (class_amount, sample_amounts) in dataset_configs.items():
         
         # Iterate through the sample amounts
         for sample_amount in sample_amounts:
+
+            # using datasets already split into training and testing datasets
             print(f'Processing {fm} dataset with {class_amount} classes and {sample_amount} samples')
             feature_file_train = PATH_TO_CA + 'split_datasets/' + f'{fm}_feature_dataset_top{class_amount}_max{sample_amount}_train.npz'
             feature_file_test = PATH_TO_CA + 'split_datasets/' + f'{fm}_feature_dataset_top{class_amount}_max{sample_amount}_test.npz'
@@ -132,7 +140,7 @@ for fm in fm_names:
                 def forward(self, x): 
                         return self.fc(x)
                 
-            reducer = PCA(n_components=config['pca__reduced_fe_size'])
+            reducer = PCA(n_components=config['pca__reduced_fe_size'], random_state=42)
 
             X_train_reduced = reducer.fit_transform(X_train)
             X_test_reduced = reducer.transform(X_test) if hasattr(reducer, 'transform') else reducer.fit_transform(X_test)
