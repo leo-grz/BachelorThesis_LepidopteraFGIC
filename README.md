@@ -50,7 +50,7 @@ Since the data used for this project is not available due to its size, it would 
 Links to the images are given as stated above, advised download speed is 2 images per second, the  `01_image_downloader.py` can be used for this purpose.
 After qulaity control, the feature embeddings of the two Foundation Models can be extracted using the `05_feature_extractor.py` script. From there on tests provided in the scripts numerated from 06 to 09 can be used for experimenting.
 
-The results are still provided in the `data` folder and are free for further investigation.
+The results are still provided in the `data` folder and are free for further investigation. Since GitHub doesn't allow files bigger than 100MB without a premium subscription, some bigger files are listed [here](https://mega.nz/#P!AgDk7TWIGkvliYQXwY7xKz-ZwIB-UzxaC0mo2QziQqpmzysVFUroFqZh--bnt2pA8ILNE-Inm_9a62v5wCDKHs_hBDRfp10Mh9KYG2AW3OV_02t240P4nA). (Password: 'Lepidoptera')
 
 ## Requirements
 
