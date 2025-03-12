@@ -1,3 +1,12 @@
+'''
+This script performs cross-validation testing for Logistic Regression and KNN
+on extracted features using the best performing hyperparameters identified from overall cross validation testing.
+These tests are done, since the original cross validation testing did not involve validation sets. 
+(As this does not alter the overall performance, but just interpretability, not all tests were repeated.)
+
+'''
+
+# Imports
 import time
 from sklearn.decomposition import PCA
 from sklearn.model_selection import StratifiedKFold, train_test_split

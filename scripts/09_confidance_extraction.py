@@ -1,3 +1,8 @@
+'''
+This script uses the best parameters found before from cv_test_specific.py to train once again without cross validation.
+This time the confidences for each prediction are saved for further analysis.
+'''
+
 import time
 from sklearn.decomposition import PCA
 from umap import UMAP

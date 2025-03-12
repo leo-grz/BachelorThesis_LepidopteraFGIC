@@ -1,11 +1,8 @@
-from torchvision import transforms
 import torch
 from torch.utils.data import Dataset
 
-from sklearn.preprocessing import LabelEncoder
 from PIL import Image, UnidentifiedImageError
 import os
-from time import perf_counter as pc
 import logging
 
 PATH_TO_DATA = '/home/lgierz/BA_MothClassification/data/'

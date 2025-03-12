@@ -1,6 +1,7 @@
-data/raw/
-data/processed/
-data/status/
+depricated/
+data/
+DINOv2_Features_Full_CorrectlyLabeled.npz
+ResNet50_Features_Full_CorrectlyLabeled.npz
 
 .ipynb_checkpoints
 __pycache__/

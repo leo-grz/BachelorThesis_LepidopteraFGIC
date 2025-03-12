@@ -1,5 +1,12 @@
-# Imports
+'''
+This script extracts features from images using a specified model (ResNet or DINO).
+It processes images, extracts features, and saves them to a file. It can also validate
+the extracted features against previously calculated features.
 
+The script should be executed after preparing the dataset and before any further analysis.
+'''
+
+# Imports
 import torch
 from torch.utils.data import DataLoader
 import torch.nn as nn
@@ -161,7 +168,7 @@ with torch.no_grad():
             torch.cuda.empty_cache()
 
 
-
+        # to check if the features are correct and ensure no mistake has been made
         elif VALIDATE_FEATURES:
             
             features = np.concatenate(features)
