@@ -26,8 +26,8 @@ Trained on their embeddings were a Logistic Regression and K-Nearest Neighbors C
 Links to the images used for feature extraction are given in the `dataset_top589_max3000_fex_statusupdate.csv` dataset. The original dataset (hosted on GBIF) can be accessed under the following [link](https://doi.org/10.15468/dl.8byj47). The images are varying strongly in quality, some example images are given below.
 <p align="center">
     <img src="data/example_samples/3725704126_27621411.jpg" alt="sample1" width="30%">
-    <img src="data/example_samples/3726205023_30566083.png" alt="sample2" width="30%">
-    <img src="data/example_samples/4881370136_87361092.png" alt="sample3" width="30%">
+    <img src="data/example_samples/3726205023_30566083.jpg" alt="sample2" width="30%">
+    <img src="data/example_samples/4881370136_87361092.jpg" alt="sample3" width="30%">
 </p>
 
 ## Results
@@ -74,4 +74,4 @@ This project is licensed under the MIT License.
 
 ## Acknowledgements
 
-Special thanks goes to Jonas Alle (M.Sc.) who supervised this project and contributed greatly with valuable explainations, advice, experience and good humor! :) Furthermore I want to thank Prof. Dr. Christian Ledig - the first supervisor - and that I was able to write this thesis at his chair.
+Special thanks goes to Jonas Alle (M.Sc.) who supervised this project and contributed greatly with valuable explainations, advice, experience and good humor! Furthermore I want to thank Prof. Dr. Ledig for being my first supervisor and letting me do the thesis at his chair.
