@@ -1,10 +1,5 @@
-depricated/
-DINOv2_Features_Full_CorrectlyLabeled.npz
-ResNet50_Features_Full_CorrectlyLabeled.npz
-
+data_big_files/
 .ipynb_checkpoints
 __pycache__/
 .vscode/
 .tokens/
-scripts/download_test/
-testing/
